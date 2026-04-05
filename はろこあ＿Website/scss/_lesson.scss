@@ -1,0 +1,115 @@
+// ============================================
+// Lesson - レッスン内容セクション
+// グループレッスンをメインに大きく表示
+// プライベートレッスンは控えめに掲載
+// ============================================
+
+.lesson {
+  background: $c-cream;
+  padding: 56px 0;
+
+  @include tablet {
+    padding: 64px 0;
+  }
+
+  @include desktop {
+    padding: 80px 0;
+  }
+
+  // --- レッスンカード ---
+  &__card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid $c-border;
+    margin-bottom: 16px;
+
+    // タブレット以上: 横並び（画像 + テキスト）
+    @include tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  // カード画像
+  &__card-img {
+    height: 180px;
+
+    @include tablet {
+      height: 100%;
+      min-height: 200px;
+    }
+  }
+
+  // カード本文
+  &__card-body {
+    padding: 20px;
+    background: $c-white;
+  }
+
+  &__card-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  &__card-meta {
+    font-size: 11px;
+    color: $c-text-muted;
+    margin-bottom: 10px;
+  }
+
+  &__card-desc {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.8;
+  }
+
+  // --- 効果タグ（姿勢改善、体幹強化 等） ---
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  &__tag {
+    font-size: 10px;
+    padding: 4px 12px;
+    background: $c-pale-green;
+    color: $c-green;
+    border-radius: 14px;
+  }
+
+  // --- プライベートレッスン（控えめ表示） ---
+  &__private {
+    margin-top: 12px;
+    padding: 16px;
+    background: $c-white;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+  }
+
+  &__private-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: $c-text;
+    margin-bottom: 4px;
+  }
+
+  &__private-text {
+    line-height: 1.7;
+  }
+
+  // 設備拡充予定バッジ
+  &__private-coming {
+    font-size: 10px;
+    color: $c-text-faint;
+    display: inline-block;
+    margin-top: 6px;
+    border: 1px solid #ddd;
+    padding: 2px 10px;
+    border-radius: 10px;
+  }
+}

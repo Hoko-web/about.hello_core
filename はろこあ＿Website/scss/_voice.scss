@@ -1,0 +1,90 @@
+// ============================================
+// Voice - お客様の声セクション
+// 大きな引用符 + 感想テキスト
+// タブレット: 2列 / デスクトップ: 3列
+// ============================================
+
+.voice {
+  background: $c-white;
+  padding: 56px 0;
+
+  @include tablet {
+    padding: 64px 0;
+  }
+
+  @include desktop {
+    padding: 80px 0;
+  }
+
+  // --- カードラッパー ---
+  &__list {
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // --- 各声カード ---
+  &__item {
+    padding: 28px 24px;
+    background: $c-cream;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    position: relative;
+
+    // 装飾: 大きな引用符
+    &::before {
+      content: "\201C"; // 左ダブルクォーテーション
+      font-size: 60px;
+      color: $c-green-light;
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 10px;
+      left: 18px;
+      line-height: 1;
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  // --- 通う前の状態 ---
+  &__before {
+    font-size: 11px;
+    color: $c-green;
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+
+  // --- 引用メッセージ ---
+  &__quote {
+    font-size: 15px;
+    color: $c-dark;
+    line-height: 1.9;
+    padding-left: 8px;
+    margin-bottom: 12px;
+    font-style: normal;
+  }
+
+  // --- 詳細な感想 ---
+  &__body {
+    font-size: 12px;
+    color: $c-text-light;
+    line-height: 1.8;
+  }
+
+  // --- 名前・属性 ---
+  &__who {
+    font-size: 11px;
+    color: $c-text-muted;
+    margin-top: 10px;
+    text-align: right;
+    font-style: normal;
+  }
+}

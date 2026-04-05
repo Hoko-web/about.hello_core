@@ -1,0 +1,105 @@
+// ============================================
+// FAQ - よくあるご質問セクション
+// クリックでアコーディオン開閉（main.js と連携）
+// .is-closed クラスの付け外しで回答の表示を制御
+// ============================================
+
+.faq {
+  background: $c-white;
+  padding: 56px 0;
+
+  @include tablet {
+    padding: 64px 0;
+  }
+
+  @include desktop {
+    padding: 80px 0;
+  }
+
+  // --- FAQリスト ---
+  &__list {
+    @include desktop {
+      max-width: $max-w-md;
+      margin: 0 auto;
+    }
+  }
+
+  // --- 各質問アイテム ---
+  &__item {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  // --- 質問テキスト ---
+  &__question {
+    font-size: 13px;
+    font-weight: 600;
+    color: $c-dark;
+    margin-bottom: 6px;
+    cursor: pointer;
+    position: relative;
+    padding-right: 24px;
+
+    // Q. ラベル
+    &::before {
+      content: "Q.";
+      color: $c-green;
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    // 開閉アイコン（+ / −）
+    &::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 16px;
+      color: $c-green-light;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  // --- 回答テキスト ---
+  &__answer {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.8;
+    overflow: hidden;
+    max-height: 300px;
+    transition:
+      max-height 0.4s ease,
+      opacity 0.3s ease;
+    opacity: 1;
+  }
+
+  // --- アコーディオン: 閉じた状態 ---
+  &__item.is-closed &__answer {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  &__item.is-closed &__question::after {
+    content: "+";
+  }
+
+  &__item:not(.is-closed) &__question::after {
+    content: "\2212"; // マイナス記号
+  }
+
+  .container {
+    @include tablet {
+      max-width: 480px;
+    }
+
+    @include desktop {
+      max-width: 700px;
+    }
+  }
+}

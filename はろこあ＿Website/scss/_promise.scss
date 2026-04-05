@@ -1,0 +1,97 @@
+// ============================================
+// Promise - 3つの約束セクション
+// 大きな番号 + 見出し + 説明 + イメージ写真
+// デスクトップでは3カラムグリッド
+// ============================================
+
+.promise {
+  background: $c-white;
+  padding: 56px 0;
+
+  @include tablet {
+    padding: 64px 0;
+  }
+
+  @include desktop {
+    padding: 80px 0;
+  }
+
+  // --- ブロックラッパー（デスクトップでグリッド化） ---
+  &__blocks {
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+  }
+
+  // --- 各約束ブロック ---
+  &__block {
+    margin-bottom: 56px;
+    text-align: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  // --- 大きな番号（01, 02, 03） ---
+  &__num {
+    display: block;
+    font-family: $ff-serif;
+    font-size: 48px;
+    font-weight: 200;
+    color: $c-green-light;
+    line-height: 1;
+    margin-bottom: 4px;
+
+    @include desktop {
+      font-size: 40px;
+    }
+  }
+
+  // --- 見出し ---
+  &__heading {
+    font-size: 16px;
+    font-weight: 600;
+    color: $c-dark;
+    margin-bottom: 8px;
+
+    @include tablet {
+      font-size: 17px;
+    }
+  }
+
+  // --- 説明文 ---
+  &__text {
+    font-size: 12px;
+    color: $c-text-light;
+    line-height: 1.8;
+    margin-bottom: 14px;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include desktop {
+      max-width: none;
+    }
+  }
+}
+// --- イメージ写真 ---
+//   &__img {
+//     height: 140px;
+//     border-radius: 20px;
+
+//     @include tablet {
+//       height: 180px;
+//     }
+
+//     @include desktop {
+//       height: 160px;
+//     }
+//   }
+// }

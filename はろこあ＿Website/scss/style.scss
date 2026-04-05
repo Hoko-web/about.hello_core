@@ -1,0 +1,35 @@
+// ============================================
+// pilatesroom はろこあ - メインスタイルシート
+//
+// 対応      : モバイルファースト → 768px(tablet) → 1024px(desktop)
+//
+// コンパイル: scss/style.scss → css/style.css
+// リセットCSS: css/reset.css（destyle.css v4）を別途読み込み
+// ============================================
+
+// --- Foundation（設計の土台） ---
+@import "variables"; // デザイントークン（カラー・フォント・ブレイクポイント）
+@import "mixins"; // レスポンシブ用メディアクエリ
+@import "base"; // 基本スタイル・コンテナ・プレースホルダー
+
+// --- Components（再利用パーツ） ---
+@import "components"; // ボタン・セクションラベル・タイトル
+
+// --- Layout（レイアウト構造） ---
+@import "header"; // ヘッダー（sticky）
+@import "sp-nav"; // SP用スライドメニュー
+@import "footer"; // フッター
+@import "fixed-bar"; // 固定CTAバー
+
+// --- Sections（ページ上部から表示順） ---
+@import "hero"; // メインビジュアル
+@import "empathy"; // 共感セクション
+@import "promise"; // 3つの約束
+@import "instructor"; // 講師紹介
+@import "voice"; // お客様の声
+@import "cta"; // Mid CTA + Final CTA
+@import "lesson"; // レッスン内容
+@import "price"; // 料金
+@import "flow"; // 無料体験の流れ
+@import "faq"; // よくあるご質問
+@import "access"; // アクセス

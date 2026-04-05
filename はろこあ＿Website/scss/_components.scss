@@ -1,0 +1,98 @@
+// ============================================
+// Components
+// 複数セクションで共通利用するUIパーツ
+// ============================================
+
+// --- ボタン共通 ---
+.btn {
+  display: block;
+  padding: 15px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 30px;
+  transition: opacity 0.3s ease;
+  letter-spacing: 1.2;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  // グリーンボタン（メインCTA）
+  &--green {
+    background: $c-green;
+    color: $c-white;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  // 白ボタン（グリーン背景上で使用）
+  &--white {
+    background: $c-white;
+    color: $c-green;
+    max-width: 270px;
+    margin: 0 auto;
+  }
+
+  &--menu {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: $c-green;
+    color: $c-white;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+
+// --- セクション英字ラベル（例: PROMISE, VOICE） ---
+.section-label {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $c-green;
+  text-align: center;
+  margin-bottom: 6px;
+
+  // 淡いグリーン背景セクション用（濃い文字色）
+  &--green {
+    color: $c-green;
+  }
+}
+
+// --- セクションタイトル ---
+.section-title {
+  font-family: $ff-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 28px;
+  color: $c-dark;
+
+  @include tablet {
+    font-size: 20px;
+    margin-bottom: 36px;
+  }
+
+  @include desktop {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+
+  // サブテキスト（例: 料金セクションの「グループレッスン」）
+  &__sub {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: $c-text-muted;
+    margin-top: 4px;
+    font-family: $ff-sans;
+  }
+}
+
+// --- 注釈テキスト ---
+.note-sm {
+  font-size: 11px;
+  color: $c-text-muted;
+  text-align: center;
+  margin-top: 10px;
+}

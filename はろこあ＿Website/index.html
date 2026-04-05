@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      pilatesroom はろこあ | 愛知県新城市 女性のためのピラティス教室
+    </title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32 * 32"
+      href="./img/はろこあ_logo.png"
+    />
+    <meta
+      name="description"
+      content="愛知県新城市で女性専用ピラティス教室「pilatesroom はろこあ」です！初心者大歓迎・運動不足だと感じている方も是非！少人数制レッスンとパーソナルレッスンをご用意しております。まずはLINEで無料体験のご予約お待ちしております！"
+    />
+
+    <!-- ============================================
+      外部ライブラリ（2つ）
+      1. Google Fonts  … Webフォント（Noto Sans JP / Noto Serif JP）
+      2. AOS v2.3.1    … スクロール連動フェードインアニメーション
+      ============================================ -->
+
+    <!-- Google Fonts: Noto Sans JP（本文）/ Noto Serif JP（見出しアクセント） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700&family=Noto+Serif+JP:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS: スクロール時のフェードインアニメーション用CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- ============================================
+      スタイルシート
+      ============================================ -->
+    <!-- destyle.css（リセットCSS）- ブラウザデフォルトスタイルを統一 -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- メインスタイル（scss/style.scss からコンパイル） -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ============================================
+      Header
+      ページ上部に固定表示（sticky）
+      スライドメニュー（SP TB用）
+      ロゴ画像 + LINE予約ボタン + ハンバーガーメニュー
+      ============================================ -->
+    <!-- ====== .is-openが付くとスライドイン ====== -->
+    <div class="sp-nav" id="jsSpNav">
+      <!-- ====== 背景オーバーレイ（タップで閉じる用） ====== -->
+      <div class="sp-nav__overlay" id="jsSpNavOverlay"></div>
+      <!-- ====== メニュー本体（右からスライドしてくる） ====== -->
+      <div class="sp-nav__body">
+        <ul class="sp-nav__list">
+          <li><a href="#promise" class="sp-nav__link">3つの約束</a></li>
+          <li><a href="#instructor" class="sp-nav__link">講師紹介</a></li>
+          <li><a href="#voice" class="sp-nav__link">お客様の声</a></li>
+          <li><a href="#lesson" class="sp-nav__link">レッスン</a></li>
+          <li><a href="#price" class="sp-nav__link">料金</a></li>
+          <li><a href="#flow" class="sp-nav__link">体験の流れ</a></li>
+          <li><a href="#faq" class="sp-nav__link">よくある質問</a></li>
+          <li><a href="#access" class="sp-nav__link">アクセス</a></li>
+        </ul>
+        <a href="https://lin.ee/qXpfxsaw" class="sp-nav__cta btn btn--menu"
+          >LINEで無料体験を<br />予約する</a
+        >
+        <div class="final-cta__ig">
+          <a href="https://www.instagram.com/hello__core?igsh=dHl6ZmRqNTRhZm9w&utm_source=qr" target="_blank" rel="noopener"
+            ><img
+              src="./img/Instagram_logo.png"
+              alt="Instagram logo"
+              class="final-cta__ig-logo"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container header__inner">
+        <a href="#top">
+          <img
+            src="./img/はろこあ_logo.png"
+            alt="pilatesroom はろこあ"
+            class="header__logo-img"
+          />
+        </a>
+        <!-- ====== PC用ナビ　====== -->
+        <nav class="header__nav">
+          <a href="#promise" class="header__nav-link">3つの約束</a>
+          <a href="#instructor" class="header__nav-link">講師紹介</a>
+          <a href="#voice" class="header__nav-link">お客様の声</a>
+          <a href="#lesson" class="header__nav-link">レッスン</a>
+          <a href="#price" class="header__nav-link">料金</a>
+          <a href="#faq" class="header__nav-link">よくある質問</a>
+          <a href="#access" class="header__nav-link">アクセス</a>
+        </nav>
+        <!-- ====== ヘッダー右側（LINE+ハンバーガー） ====== -->
+        <div class="header__actions">
+          <a href="https://lin.ee/qXpfxsaw" class="header__cta-btn"
+            >無料体験を予約する</a
+          >
+
+          <!-- ====== ハンバーガーボタン（SP・TBのみ） ====== -->
+          <!-- ====== span ３本線 → jsで .is-open 付与時に　×にトランスフォーム ====== -->
+          <button
+            class="hamburger"
+            id="jsHamburger"
+            type="button"
+            aria-label="メニューを開く"
+          >
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- ============================================
+        Hero - メインビジュアル
+        波型SVG使用
+        ============================================ -->
+      <section class="hero" id="top">
+        <!-- 写真スライドショー -->
+        <div class="hero__photos">
+          <img src="./img/photo1.JPG" alt="" class="hero__photo is-active" />
+          <img src="./img/photo2.JPG" alt="" class="hero__photo" />
+          <img src="./img/photo3.JPG" alt="" class="hero__photo" />
+          <!-- グラデーションオーバーレイ -->
+          <div class="hero__photo-overlay"></div>
+        </div>
+        <div class="container hero__content">
+          <h1 class="hero__title">
+            <span class="hero__title-line">自分を大切にする</span>
+            <span class="hero__title-line">60分をここで。</span>
+          </h1>
+          <p class="hero__sub">
+            愛知県新城市で女性のための<br />無理なく続けられるピラティス教室
+          </p>
+          <ul class="hero__badges">
+            <li class="hero__badge">女性専用</li>
+            <li class="hero__badge">初心者歓迎</li>
+            <li class="hero__badge">完全予約制</li>
+          </ul>
+          <p class="hero__free-label">まずはお気軽に</p>
+          <a href="https://lin.ee/qXpfxsaw" class="btn btn--white"
+            >無料体験を予約する</a
+          >
+        </div>
+        <!-- 波型SVG: ヒーロー下端の曲線トランジション -->
+        <div class="hero__wave">
+          <svg viewBox="0 0 400 40" preserveAspectRatio="none">
+            <path
+              d="M0,20 C100,45 300,0 400,20 L400,40 L0,40 Z"
+              fill="#F7F4EF"
+            />
+          </svg>
+        </div>
+      </section>
+
+      <!-- ============================================
+        Empathy - 共感セクション
+        ターゲットの悩みを代弁し「自分のこと」と感じてもらう
+        ピル型（角丸カプセル）カードで柔らかい印象
+        ============================================ -->
+      <section class="empathy">
+        <div class="container" data-aos="fade-up">
+          <p class="empathy__lead">
+            「運動は苦手」「続けられるかな」<br />
+            そう思った<strong>あなた</strong>に<br />
+            はろこあ があります。
+          </p>
+          <ul class="empathy__list">
+            <li class="empathy__item">
+              運動したいけど、何から始めたらいいか分からない
+            </li>
+            <li class="empathy__item">
+              ジムに行ってみたけど、雰囲気が合わなかった
+            </li>
+            <li class="empathy__item">
+              腰痛が気になるけど、激しい運動はちょっと...
+            </li>
+            <li class="empathy__item">最近、体力の衰えを感じるようになった</li>
+          </ul>
+          <p class="empathy__closing">
+            ひとつでも当てはまったら、<br />はろこあ
+            がお役に立てるかもしれません。
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================================
+        Promise - はろこあの3つの約束
+        大きなセリフ体番号（01-03）+ 見出し + 説明 + 写真
+        デスクトップ(1024px〜)では3カラムグリッド
+        ============================================ -->
+      <section class="promise" id="promise">
+        <div class="container">
+          <p class="section-label">PROMISE</p>
+          <h2 class="section-title">はろこあの3つの約束</h2>
+          <div class="promise__blocks">
+            <div class="promise__block" data-aos="fade-up">
+              <span class="promise__num">01</span>
+              <h3 class="promise__heading">はじめてでも、大丈夫</h3>
+              <p class="promise__text">
+                基礎から分かりやすく丁寧にレッスンします。年齢や体力に合わせて、無理のないペースで進めていきます。
+              </p>
+            </div>
+            <div class="promise__block" data-aos="fade-up" data-aos-delay="100">
+              <span class="promise__num">02</span>
+              <h3 class="promise__heading">一人ひとりと向き合います</h3>
+              <p class="promise__text">
+                「ついていけなかったらどうしよう」の心配はいりません。お一人おひとりが効果を実感していただけるよう最後までサポートします。
+              </p>
+            </div>
+            <div class="promise__block" data-aos="fade-up" data-aos-delay="200">
+              <span class="promise__num">03</span>
+              <h3 class="promise__heading">女性だけの、息ぬき空間</h3>
+              <p class="promise__text">
+                周りを気にせずリラックスしていただけます。忙しい日々を過ごすあなたに、あなたの体と向き合う、あなただけの時間をつくります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+        Instructor - 講師紹介
+        大きな写真 + 名前 + メッセージカード
+        タブレット(768px〜)では横並び2カラム
+        ============================================ -->
+      <section class="instructor" id="instructor">
+        <div class="container" data-aos="fade-up">
+          <p class="section-label section-label--green">INSTRUCTOR</p>
+          <div class="instructor__content">
+            <!-- 講師写真: 実際の画像に差し替え -->
+            <img src="./img/母写真１.JPG" alt="" class="instructor__photo" />
+
+            <div class="instructor__info">
+              <h3 class="instructor__name">鈴木 一美</h3>
+              <p class="instructor__name-sub">すずき かずみ</p>
+              <div class="instructor__message">
+                <p>
+                  ここに講師からのメッセージが入ります。ピラティスとの出会い、指導への想い、受講者への気持ちなど。「はじめてでも安心して来てほしい」という温かい想いが伝わる文章を記載します。
+                  ここに講師からのメッセージが入ります。ピラティスとの出会い、指導への想い、受講者への気持ちなど。「はじめてでも安心して来てほしい」という温かい想いが伝わる文章を記載します。
+                  ここに講師からのメッセージが入ります。ピラティスとの出会い、指導への想い、受講者への気持ちなど。「はじめてでも安心して来てほしい」という温かい想いが伝わる文章を記載します。
+                  ここに講師からのメッセージが入ります。ピラティスとの出会い、指導への想い、受講者への気持ちなど。「はじめてでも安心して来てほしい」という温かい想いが伝わる文章を記載します。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+        Voice - お客様の声
+        大きな引用符（装飾）+ 感想テキスト
+        タブレット: 2列 / デスクトップ: 3列
+        ============================================ -->
+      <section class="voice" id="voice">
+        <div class="container">
+          <p class="section-label">VOICE</p>
+          <h2 class="section-title">通っている方の声</h2>
+          <div class="voice__list">
+            <article class="voice__item" data-aos="fade-up">
+              <p class="voice__before">通う前：運動経験がなく不安だった</p>
+              <blockquote class="voice__quote">
+                "ここにお客様の印象的な一言引用が入ります。大きめの文字で目を引く。"
+              </blockquote>
+              <p class="voice__body">
+                ここにお客様の感想が入ります。体験レッスンの印象、通い始めてからの変化、先生の人柄についてなど。
+              </p>
+              <cite class="voice__who">A.S さん（40代・会社員）</cite>
+            </article>
+            <article
+              class="voice__item"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <p class="voice__before">
+                通う前：体が硬くて続けられるか心配だった
+              </p>
+              <blockquote class="voice__quote">
+                "ここにお客様の印象的な一言引用が入ります。"
+              </blockquote>
+              <p class="voice__body">
+                ここにお客様の感想が入ります。初心者でも安心だったこと、身体の変化、少人数の良さなど。
+              </p>
+              <cite class="voice__who">K.M さん（50代・主婦）</cite>
+            </article>
+            <article
+              class="voice__item"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <p class="voice__before">通う前：産後の体型が気になっていた</p>
+              <blockquote class="voice__quote">
+                "ここにお客様の感想が入ります。"
+              </blockquote>
+              <p class="voice__body">
+                ここにお客様の感想が入ります。自分の時間が持てるようになったこと、身体の変化など。
+              </p>
+              <cite class="voice__who">Y.T さん（30代・育児中）</cite>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+        Mid CTA - 中間コンバージョンエリア
+        ページ中盤で即決ユーザーを取りこぼさないためのCTA
+        ============================================ -->
+      <section class="mid-cta">
+        <div class="container" data-aos="fade-up">
+          <p class="mid-cta__lead">まずは気軽に<br />体験してみませんか？</p>
+          <p class="mid-cta__sub">
+            初回の体験レッスンは<strong>無料</strong>です
+          </p>
+          <a href="https://lin.ee/qXpfxsaw" class="btn btn--green">LINEで無料体験を予約する</a>
+          <p class="mid-cta__note">体験後の無理な勧誘はありません</p>
+        </div>
+      </section>
+
+      <!-- ============================================
+        Lesson - レッスン内容
+        グループレッスンを大きく表示
+        プライベートレッスンは「ある」ことだけ控えめに掲載
+        ============================================ -->
+      <section class="lesson" id="lesson">
+        <div class="container">
+          <p class="section-label">LESSON</p>
+          <h2 class="section-title">レッスンについて</h2>
+          <div class="lesson__card" data-aos="fade-up">
+            <!-- レッスン写真: 実際の画像に差し替え -->
+            <div class="lesson__card-img placeholder-img">
+              グループレッスン写真
+            </div>
+            <div class="lesson__card-body">
+              <h3 class="lesson__card-title">
+                グループレッスン（マットピラティス）
+              </h3>
+              <p class="lesson__card-meta">60分 / 最大4名の少人数制</p>
+              <p class="lesson__card-desc">
+                マットを使ったピラティスのレッスンです。初めての方にも分かりやすいよう、ひとつひとつの動きを丁寧にお伝えします。
+              </p>
+              <ul class="lesson__tags">
+                <li class="lesson__tag">姿勢改善</li>
+                <li class="lesson__tag">体幹強化</li>
+                <li class="lesson__tag">柔軟性アップ</li>
+                <li class="lesson__tag">肩こり・腰痛ケア</li>
+              </ul>
+            </div>
+          </div>
+          <div class="lesson__private">
+            <p class="lesson__private-title">パーソナルレッスンもあります</p>
+            <p class="lesson__private-text">
+              マンツーマンでの専用レッスンも承っております。ご興味のある方はLINEからお気軽にご相談ください。
+            </p>
+            <span class="lesson__private-coming"
+              >今後、設備の拡充も予定しています</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+        Price - 料金
+        体験無料バナー → グループ料金（12回券を強調）→ プライベート料金（控えめ）
+        ============================================ -->
+      <section class="price" id="price">
+        <div class="container" data-aos="fade-up">
+          <p class="section-label">PRICE</p>
+          <h2 class="section-title">
+            料金<span class="section-title__sub">グループレッスン</span>
+          </h2>
+
+          <!-- 無料体験バナー -->
+          <div class="price__free-box">
+            <!-- <span class="price__free-tag">TRIAL</span> -->
+            <p class="price__free-value">今なら体験レッスン無料</p>
+            <p class="price__free-sub">入会金もかかりません</p>
+          </div>
+
+          <!-- 単発 -->
+          <div class="price__item">
+            <div class="price__item-info">
+              <span class="price__item-name">単発</span>
+              <span class="price__item-detail">当日限り</span>
+            </div>
+            <div class="price__item-right">
+              <span class="price__item-amount">3,000円</span>
+              <!-- <span class="price__item-per">1回 3,000円</span> -->
+            </div>
+          </div>
+
+          <!-- 8回券 -->
+          <div class="price__item">
+            <div class="price__item-info">
+              <span class="price__item-name">8回券</span>
+              <span class="price__item-detail">有効期限 4ヶ月</span>
+            </div>
+            <div class="price__item-right">
+              <span class="price__item-amount">20,000円</span>
+              <span class="price__item-per">1回 2,500円</span>
+            </div>
+          </div>
+
+          <!-- 12回券（いちばん人気） -->
+          <div class="price__recommend">
+            <span class="price__recommend-badge">いちばん人気</span>
+            <div class="price__recommend-row">
+              <div class="price__item-info">
+                <span class="price__item-name price__item-name--lg"
+                  >12回券</span
+                >
+                <span class="price__item-detail">有効期限 6ヶ月</span>
+              </div>
+              <div class="price__item-right">
+                <span class="price__item-amount price__item-amount--lg"
+                  >27,000円</span
+                >
+                <span class="price__item-per">1回 2,250円</span>
+              </div>
+            </div>
+            <p class="price__recommend-note">
+              週1回/3ヶ月通っていただくことで効果が実感しやすいです
+            </p>
+          </div>
+
+          <!-- 24回券 -->
+          <div class="price__item">
+            <div class="price__item-info">
+              <span class="price__item-name">24回券</span>
+              <span class="price__item-detail">有効期限 8ヶ月</span>
+            </div>
+            <div class="price__item-right">
+              <span class="price__item-amount">48,000円</span>
+              <span class="price__item-per">1回 2,000円</span>
+            </div>
+          </div>
+
+          <p class="price__note">※ 全て税込価格です</p>
+
+          <!-- プライベートレッスン料金（控えめ表示） -->
+          <div class="price__private">
+            <h3 class="price__private-heading">
+              パーソナルレッスン（マンツーマン）
+            </h3>
+            <div class="price__item price__item--small">
+              <div class="price__item-info">
+                <span class="price__item-name">単発</span>
+                <span class="price__item-detail">当日限り</span>
+              </div>
+              <div class="price__item-right">
+                <span class="price__item-amount">6,000円</span>
+              </div>
+            </div>
+            <div class="price__item price__item--small">
+              <div class="price__item-info">
+                <span class="price__item-name">4回券</span>
+                <span class="price__item-detail">有効期限 4ヶ月</span>
+              </div>
+              <div class="price__item-right">
+                <span class="price__item-amount">23,000円</span>
+                <span class="price__item-per">1回 5,750円</span>
+              </div>
+            </div>
+            <div class="price__item price__item--small">
+              <div class="price__item-info">
+                <span class="price__item-name">8回券</span>
+                <span class="price__item-detail">有効期限 6ヶ月</span>
+              </div>
+              <div class="price__item-right">
+                <span class="price__item-amount">44,000円</span>
+                <span class="price__item-per">1回 5,500円</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+        Flow - 無料体験の流れ
+        4ステップで「簡単に始められる」ことを伝える
+        ステップ直後にCTAを配置
+        ============================================ -->
+      <section class="flow" id="flow">
+        <div class="container">
+          <p class="section-label">FLOW</p>
+          <h2 class="section-title">無料体験の流れ</h2>
+          <ol class="flow__steps">
+            <li class="flow__step" data-aos="fade-up">
+              <span class="flow__num">1</span>
+              <div class="flow__step-content">
+                <h3 class="flow__step-title">LINEで友だち追加</h3>
+                <p class="flow__step-text">
+                  下のボタンから公式LINEを追加してください。
+                </p>
+              </div>
+            </li>
+            <li class="flow__step" data-aos="fade-up" data-aos-delay="100">
+              <span class="flow__num">2</span>
+              <div class="flow__step-content">
+                <h3 class="flow__step-title">「体験」とメッセージを送信</h3>
+                <p class="flow__step-text">
+                  アプリで体験の日程を予約していただきます。
+                </p>
+              </div>
+            </li>
+            <li class="flow__step" data-aos="fade-up" data-aos-delay="200">
+              <span class="flow__num">3</span>
+              <div class="flow__step-content">
+                <h3 class="flow__step-title">日程確定・場所のご案内</h3>
+                <p class="flow__step-text">
+                  予約確定後、場所や持ち物などをお伝えします。
+                </p>
+              </div>
+            </li>
+            <li class="flow__step" data-aos="fade-up" data-aos-delay="300">
+              <span class="flow__num">4</span>
+              <div class="flow__step-content">
+                <h3 class="flow__step-title">体験当日</h3>
+                <p class="flow__step-text">
+                  動きやすい服装・タオル・飲み物をお持ちください。60分のレッスンを体験していただきます。
+                </p>
+              </div>
+            </li>
+          </ol>
+          <div class="flow__cta">
+            <p class="flow__cta-label">ご不明点などもお気軽にご相談ください</p>
+            <a href="https://lin.ee/qXpfxsaw" class="btn btn--green"
+              >LINEで無料体験を予約する</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+        FAQ - よくあるご質問
+        アコーディオン開閉（main.js で制御）
+        JS無効時は全項目が開いた状態で表示される
+        ============================================ -->
+      <section class="faq" id="faq">
+        <div class="container" data-aos="fade-up">
+          <h2 class="section-title">よくあるご質問</h2>
+          <dl class="faq__list">
+            <div class="faq__item">
+              <dt class="faq__question">
+                運動経験がまったくなくても大丈夫ですか？
+              </dt>
+              <dd class="faq__answer">
+                はい、もちろんです。通われている方の多くが運動未経験からのスタートです。基礎から丁寧にお伝えしますので、ご安心ください。
+              </dd>
+            </div>
+            <div class="faq__item">
+              <dt class="faq__question">体が硬いのですが大丈夫ですか？</dt>
+              <dd class="faq__answer">
+                大丈夫です。ピラティスには柔軟性を高める効果もあります。今の身体の状態に合わせて無理なく進めます。
+              </dd>
+            </div>
+            <div class="faq__item">
+              <dt class="faq__question">何を持っていけばいいですか？</dt>
+              <dd class="faq__answer">
+                動きやすい服装、タオル、飲み物をお持ちください。マットなどの器具はこちらでご用意しています。
+              </dd>
+            </div>
+            <div class="faq__item">
+              <dt class="faq__question">駐車場はありますか？</dt>
+              <dd class="faq__answer">
+                はい、自宅前に無料の駐車スペースがあります。場所の詳細はLINEで写真つきでご案内します。
+              </dd>
+            </div>
+            <div class="faq__item">
+              <dt class="faq__question">
+                体験後、必ず入会しないといけませんか？
+              </dt>
+              <dd class="faq__answer">
+                いいえ、そんなことはありません。無理な勧誘はしませんので、じっくりご検討ください。
+              </dd>
+            </div>
+            <div class="faq__item">
+              <dt class="faq__question">キャンセルはできますか？</dt>
+              <dd class="faq__answer">
+                はい、可能です。日程の変更などもLINEにてご相談ください。
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============================================
+        Access - アクセス情報
+        住所（詳細は予約後）・駐車場・対象
+        ============================================ -->
+      <section class="access" id="access">
+        <div class="container" data-aos="fade-up">
+          <p class="section-label">ACCESS</p>
+          <h2 class="section-title">アクセス</h2>
+          <dl class="access__info">
+            <div class="access__row">
+              <dt>住所</dt>
+              <dd>愛知県新城市市場台（詳細は予約確定後にご案内します）</dd>
+            </div>
+            <div class="access__row">
+              <dt>駐車場</dt>
+              <dd>あり（自宅前・無料）</dd>
+            </div>
+            <div class="access__row">
+              <dt>対象</dt>
+              <dd>女性専用・完全予約制</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============================================
+        Final CTA - 最終コンバージョンエリア
+        グリーン全面背景 + 波型SVG（上部装飾）
+        無料体験への最後の後押し + Instagramリンク
+        ============================================ -->
+      <section class="final-cta">
+        <!-- 波型SVG: クリーム面からグリーンへのトランジション -->
+        <div class="final-cta__wave">
+          <svg viewBox="0 0 400 20" preserveAspectRatio="none">
+            <path
+              d="M0,10 C100,22 300,0 400,10 L400,20 L0,20 Z"
+              fill="#5C7A4B"
+              stroke="none"
+            />
+          </svg>
+        </div>
+        <div class="container" data-aos="fade-up">
+          <p class="final-cta__main">無料体験 受付中</p>
+          <p class="final-cta__sub">
+            あなたの「はじめの一歩」を、はろこあで一緒に。
+          </p>
+          <a href="https://lin.ee/qXpfxsaw" class="btn btn--white"
+            >LINEで無料体験を予約する</a
+          >
+          <p class="final-cta__note">体験後の無理な勧誘はありません</p>
+          <div class="final-cta__ig">
+            <a href="https://www.instagram.com/hello__core?igsh=dHl6ZmRqNTRhZm9w&utm_source=qr" target="_blank" rel="noopener"
+              ><img
+                src="./img/Instagram_logo.png"
+                alt="Instagram logo"
+                class="final-cta__ig-logo"
+            /></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================
+      Footer
+      ロゴ・ナビ・法的リンク・コピーライト
+      ============================================ -->
+    <footer class="footer">
+      <div class="footer__logo">pilatesroom はろこあ</div>
+      <nav class="footer__nav">
+        <a href="#promise">３つの約束</a>
+        <a href="#instructor">講師紹介</a>
+        <a href="#voice">お客様の声</a>
+        <a href="#lesson">レッスン</a>
+        <a href="#price">料金</a>
+        <a href="#flow">体験の流れ</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#access">アクセス</a>
+      </nav>
+      <div class="footer__legal">
+        <a href="./privacy_policy/file.html">プライバシーポリシー</a>
+      </div>
+      <p class="footer__copy">
+        &copy; 2026 pilatesroom はろこあ All rights reserved.
+      </p>
+    </footer>
+
+    <!-- ============================================
+      Fixed CTA Bar
+      画面下部に固定表示される予約バー
+      ヒーローセクション通過後に表示（main.js で制御）
+      ============================================ -->
+    <div class="fixed-bar" id="fixedBar">
+      <a href="https://lin.ee/qXpfxsaw" class="fixed-bar__line btn btn--green"
+        >LINEで無料体験予約する</a
+      >
+    </div>
+
+    <!-- 固定バーの高さ分のスペーサー -->
+    <div class="bottom-spacer"></div>
+
+    <!-- ============================================
+      JavaScript
+      ============================================ -->
+    <!-- AOS: スクロールアニメーション -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- メインスクリプト（AOS初期化・固定バー制御・FAQアコーディオン） -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

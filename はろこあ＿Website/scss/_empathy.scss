@@ -1,0 +1,81 @@
+// ============================================
+// Empathy - 共感セクション
+// ターゲットの悩みに寄り添い「自分のこと」と思ってもらう
+// ピル型カードで柔らかな印象を演出
+// ============================================
+
+.empathy {
+  background: $c-cream;
+  padding: 56px 0;
+
+  @include tablet {
+    padding: 64px 0;
+  }
+
+  @include desktop {
+    padding: 80px 0;
+  }
+
+  // --- リード文（大きな問いかけ） ---
+  &__lead {
+    font-size: 20px;
+    text-align: center;
+    line-height: 2.2;
+    color: $c-dark;
+    margin-bottom: 36px;
+    font-weight: 300;
+
+    strong {
+      font-weight: 600;
+      color: $c-green;
+    }
+
+    @include tablet {
+      font-size: 24px;
+      margin-bottom: 44px;
+    }
+  }
+
+  // --- 悩みリスト ---
+  // モバイル: 縦並び / タブレット: 2列 / デスクトップ: 3列
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // --- 各悩みアイテム（ピル型） ---
+  &__item {
+    font-size: 13px;
+    padding: 14px 20px;
+    background: $c-white;
+    border-radius: 40px;
+    color: #6a6a5a;
+    text-align: center;
+    line-height: 1.5;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
+  }
+
+  // --- クロージングメッセージ ---
+  &__closing {
+    font-size: 14px;
+    text-align: center;
+    color: $c-text-light;
+    line-height: 2;
+    margin-top: 28px;
+
+    @include tablet {
+      margin-top: 36px;
+    }
+  }
+}

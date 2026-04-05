@@ -1,0 +1,83 @@
+// ============================================
+// Instructor - 講師紹介セクション
+// 大きな写真 + 名前 + メッセージ
+// タブレット以上では横並び2カラムレイアウト
+// ============================================
+
+.instructor {
+  // background: $c-pale-green;
+  padding: 56px 0;
+  max-width: 500px;
+  margin: 0 auto;
+
+  @include tablet {
+    padding: 64px 0;
+    max-width: $max-w-md;
+  }
+
+  @include desktop {
+    padding: 80px 0;
+    max-width: $max-w-lg;
+  }
+
+  // --- コンテンツラッパー（全サイズ縦積み） ---
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // --- 講師写真 ---
+  &__photo {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 240px;
+    border-radius: 24px;
+    margin-bottom: 24px;
+    object-fit: cover;
+    object-position: center 40%;
+
+    @include tablet {
+      height: 280px;
+    }
+
+    @include desktop {
+      height: 320px;
+    }
+  }
+
+  // --- 講師名 ---
+  &__name {
+    font-family: $ff-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 2px;
+
+    @include tablet {
+      font-size: 22px;
+    }
+  }
+
+  // --- ふりがな ---
+  &__name-sub {
+    font-size: 11px;
+    color: $c-text-muted;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  // --- メッセージ（白背景カード） ---
+  &__message {
+    font-size: 13px;
+    color: $c-text;
+    line-height: 2.2;
+    padding: 20px 24px;
+    background: $c-white;
+    border-radius: 16px;
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+}

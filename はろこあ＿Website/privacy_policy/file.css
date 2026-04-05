@@ -1,0 +1,59 @@
+/* ============================================
+   プライバシーポリシーページ固有スタイル
+   ============================================ */
+
+.privacy-policy {
+  padding: 60px 0 80px;
+}
+
+/* タイトル */
+.privacy-policy__title {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #4a4a3f;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #7a9e68;
+  padding-bottom: 16px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .privacy-policy__title {
+    font-size: 26px;
+  }
+}
+
+/* 各ブロック */
+.privacy-policy__block {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #e8e3d9;
+}
+
+.privacy-policy__block:last-of-type {
+  border-bottom: none;
+}
+
+/* 小見出し */
+.privacy-policy__heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7a9e68;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+/* 本文 */
+.privacy-policy p {
+  font-size: 14px;
+  color: #4a4a3f;
+  line-height: 1.9;
+  letter-spacing: 1px;
+}
+
+/* 戻るボタン */
+.privacy-policy__back {
+  margin-top: 48px;
+  text-align: center;
+}

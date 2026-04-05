@@ -1,0 +1,31 @@
+// ============================================
+// Variables
+// デザイントークン（カラー・フォント・ブレイクポイント）
+// ============================================
+
+// --- カラーパレット: Botanical Natural ---
+$c-green: #7a9e68; // メインカラー（CTA・アクセント）
+$c-green-dark: #3a5030; // フッター背景
+$c-green-light: #c8d5b9; // 装飾・アクセント（淡）
+$c-cream: #f7f4ef; // 背景色（メイン）
+$c-pale-green: #ebf0e4; // 背景色（グリーン系）
+$c-dark: #4a4a3f; // 見出しテキスト
+$c-text: #666; // 本文テキスト
+$c-text-light: #8a8a7a; // 補助テキスト
+$c-text-muted: #aaa; // 控えめテキスト
+$c-text-faint: #bbb; // 最も淡いテキスト
+$c-border: #e8e3d9; // ボーダー・区切り線
+$c-white: #fff;
+
+// --- フォントファミリー ---
+$ff-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+$ff-serif: "Noto Serif JP", "Hiragino Mincho ProN", Georgia, serif;
+
+// --- ブレイクポイント ---
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+
+// --- コンテンツ最大幅 ---
+$max-w-sm: 480px; // スマホ向け
+$max-w-md: 750px; // タブレット向け
+$max-w-lg: 960px; // デスクトップ向け

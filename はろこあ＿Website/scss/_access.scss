@@ -1,0 +1,53 @@
+// ============================================
+// Access - アクセス情報セクション
+// 住所・駐車場・対象者の基本情報
+// ============================================
+
+.access {
+  background: $c-cream;
+  padding: 56px 0;
+
+  @include tablet {
+    padding: 64px 0;
+  }
+
+  @include desktop {
+    padding: 80px 0;
+  }
+
+  &__info {
+    font-size: 13px;
+    color: $c-text;
+    line-height: 2.2;
+
+    @include desktop {
+      max-width: $max-w-md;
+      margin: 0 auto;
+    }
+  }
+
+  // 各情報行（定義リストの行ラッパー）
+  &__row {
+    display: flex;
+    flex-direction: column;
+    // text-align: center;
+    gap: 5px;
+    margin-bottom: 4px;
+
+    dt {
+      font-weight: 600;
+      white-space: nowrap;
+      color: $c-dark;
+    }
+  }
+
+  .container {
+    @include tablet {
+      max-width: 480px;
+    }
+
+    @include desktop {
+      max-width: 700px;
+    }
+  }
+}

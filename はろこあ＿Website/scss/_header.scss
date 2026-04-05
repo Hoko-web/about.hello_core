@@ -1,0 +1,143 @@
+// ============================================
+// Header
+// ページ上部に固定表示（sticky）
+// ロゴ + LINE予約ボタン
+// ============================================
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $c-cream;
+
+  // ヘッダー内部（container を併用）
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    @include tablet {
+      max-width: 900px;
+    }
+
+    @include desktop {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      max-width: 1080px;
+    }
+  }
+
+  // ロゴ画像（img/logo.png を差し替え）
+  &__logo-img {
+    height: 50px;
+    width: auto;
+
+    @include tablet {
+      // height: 60px;
+      transform: scale(1.4);
+    }
+  }
+
+  // LINE予約ボタン
+  &__cta-btn {
+    font-size: 12px;
+    padding: 10px 15px;
+    background: $c-green;
+    color: $c-white;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
+
+// PC用インラインナビ　SP・TBでは非表示
+.header__nav {
+  display: none;
+
+  @include desktop {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+}
+
+.header__nav-link {
+  font-size: 12px;
+  color: $c-text;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $c-green;
+  }
+
+  & + .header__nav-link {
+    padding-left: 10px;
+    border-left: 1px solid $c-border;
+  }
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hamburger {
+  width: 26px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.hamburger__line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: $c-dark;
+  border-radius: 1px;
+  position: absolute;
+  left: 0;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+
+  &:nth-child(1) {
+    top: 0;
+  }
+  &:nth-child(2) {
+    top: 9px;
+  }
+  &:nth-child(3) {
+    bottom: 0;
+  }
+}
+
+.hamburger.is-open {
+  .hamburger__line:nth-child(1) {
+    top: 9px;
+    transform: rotate(45deg);
+  }
+  .hamburger__line:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger__line:nth-child(3) {
+    bottom: 9px;
+    transform: rotate(-45deg);
+  }
+}
