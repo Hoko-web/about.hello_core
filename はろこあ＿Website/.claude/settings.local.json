@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(open /Users/user/Desktop/はろこあ＿Website/wireframe.html)",
-      "Bash(gh repo:*)",
-      "WebFetch(domain:github.com)"
-    ]
-  }
-}
