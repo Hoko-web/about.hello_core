@@ -909,24 +909,24 @@ body.is-nav-open {
   }
 }
 
-.instructor {
+.trainer {
   padding: 56px 0;
   max-width: 500px;
   margin: 0 auto;
 }
 @media (min-width: 768px) {
-  .instructor {
+  .trainer {
     padding: 64px 0;
     max-width: 750px;
   }
 }
 @media (min-width: 1024px) {
-  .instructor {
+  .trainer {
     padding: 80px 0;
     max-width: 960px;
   }
 }
-.instructor__content {
+.trainer__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -935,7 +935,7 @@ body.is-nav-open {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.instructor__photo {
+.trainer__photo {
   width: 100%;
   max-width: 500px;
   margin-left: auto;
@@ -949,33 +949,47 @@ body.is-nav-open {
      object-position: center 40%;
 }
 @media (min-width: 768px) {
-  .instructor__photo {
+  .trainer__photo {
     height: 280px;
   }
 }
 @media (min-width: 1024px) {
-  .instructor__photo {
+  .trainer__photo {
     height: 320px;
   }
 }
-.instructor__name {
+.trainer__name {
   font-family: "Noto Serif JP", "Hiragino Mincho ProN", Georgia, serif;
   font-size: 20px;
   text-align: center;
   margin-bottom: 2px;
 }
 @media (min-width: 768px) {
-  .instructor__name {
+  .trainer__name {
     font-size: 22px;
   }
 }
-.instructor__name-sub {
+.trainer__name-sub {
   font-size: 11px;
   color: #aaa;
   text-align: center;
   margin-bottom: 16px;
 }
-.instructor__message {
+.trainer__profile-line {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding: 12px 0;
+  border-top: 1px solid #e8e3d9;
+  border-bottom: 1px solid #e8e3d9;
+}
+.trainer__profile-line p {
+  font-size: 12px;
+  color: #8a8a7a;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+.trainer__message {
   font-size: 13px;
   color: #666;
   line-height: 2.2;
@@ -984,22 +998,22 @@ body.is-nav-open {
   border-radius: 16px;
 }
 @media (min-width: 768px) {
-  .instructor__message {
+  .trainer__message {
     font-size: 14px;
   }
 }
-.instructor__message-more {
+.trainer__message-more {
   max-height: 600px;
   opacity: 1;
   overflow: hidden;
   -webkit-transition: max-height 0.4s ease, opacity 0.3s ease;
   transition: max-height 0.4s ease, opacity 0.3s ease;
 }
-.instructor__message-more.is-closed {
+.trainer__message-more.is-closed {
   max-height: 0;
   opacity: 0;
 }
-.instructor__toggle {
+.trainer__toggle {
   font-size: 12px;
   color: #7a9e68;
   background: none;

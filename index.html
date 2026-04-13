@@ -71,7 +71,7 @@
       <div class="sp-nav__body">
         <ul class="sp-nav__list">
           <li><a href="#promise" class="sp-nav__link">3つの約束</a></li>
-          <li><a href="#instructor" class="sp-nav__link">講師紹介</a></li>
+          <li><a href="#trainer" class="sp-nav__link">講師紹介</a></li>
           <li><a href="#voice" class="sp-nav__link">お客様の声</a></li>
           <li><a href="#lesson" class="sp-nav__link">レッスン</a></li>
           <li><a href="#price" class="sp-nav__link">料金</a></li>
@@ -107,7 +107,7 @@
         <!-- ====== PC用ナビ　====== -->
         <nav class="header__nav">
           <a href="#promise" class="header__nav-link">3つの約束</a>
-          <a href="#instructor" class="header__nav-link">講師紹介</a>
+          <a href="#trainer" class="header__nav-link">講師紹介</a>
           <a href="#voice" class="header__nav-link">お客様の声</a>
           <a href="#lesson" class="header__nav-link">レッスン</a>
           <a href="#price" class="header__nav-link">料金</a>
@@ -278,31 +278,37 @@
       </section>
 
       <!-- ============================================
-        Instructor - 講師紹介
+        Trainer - 講師紹介
         大きな写真 + 名前 + メッセージカード
         長文メッセージは「続きを読む」で開閉（JS制御）
         ============================================ -->
-      <section class="instructor" id="instructor">
+      <section class="trainer" id="trainer">
         <div class="container" data-aos="fade-up">
-          <p class="section-label section-label--green">INSTRUCTOR</p>
-          <div class="instructor__content">
+          <p class="section-label section-label--green">TRAINER</p>
+          <div class="trainer__content">
             <img
-              src="./img/instructor.JPG"
+              src="./img/trainer.JPG"
               alt="講師 鈴木一美"
-              class="instructor__photo"
+              class="trainer__photo"
             />
 
-            <div class="instructor__info">
-              <h3 class="instructor__name">鈴木 一美</h3>
-              <p class="instructor__name-sub">すずき かずみ</p>
-              <div class="instructor__message">
+            <div class="trainer__info">
+              <h3 class="trainer__name">鈴木 一美</h3>
+              <p class="trainer__name-sub">すずき かずみ</p>
+              <div class="trainer__profile-line">
+                <p>
+                  NANO認定ピラティストレーナー ／ 元介護士 ／
+                  <span id="jsTrainerAge"></span>歳
+                </p>
+              </div>
+              <div class="trainer__message">
                 <p>
                   「動ける体」は当たり前じゃなかった。
-                  そう気づいたのは、交通事故がきっかけです。<br />
+                  そう気づいたのは、2024年4月交通事故がきっかけです。<br />
                   それまで何も考えずにできていた動作が、突然できなくなる。
                   動けることのありがたさを、身をもって知りました。
                 </p>
-                <div class="instructor__message-more is-closed">
+                <div class="trainer__message-more is-closed">
                   <p>
                     もともとピラティスを始めたのは、ダイエットのため。
                     けれど続けるうちに、姿勢が整い、体の調子がよくなっていくのを感じるようになりました。
@@ -317,7 +323,7 @@
                   </p>
                 </div>
                 <button
-                  class="instructor__toggle"
+                  class="trainer__toggle"
                   type="button"
                   aria-expanded="false"
                 >
@@ -471,7 +477,7 @@
 
           <div class="price__free-box">
             <p class="price__free-value">今なら体験レッスン無料</p>
-            <p class="price__free-sub">入会金もかかりません</p>
+            <p class="price__free-sub">入会金はかかりません</p>
           </div>
 
           <div class="price__item">
@@ -529,8 +535,6 @@
             </div>
           </div>
 
-          <p class="price__note">※ 全て税込価格です</p>
-
           <!-- パーソナルレッスン: グループより控えめなトーンで表示 -->
           <div class="price__private">
             <h3 class="price__private-heading">
@@ -566,6 +570,7 @@
               </div>
             </div>
           </div>
+          <p class="price__note">※ 全て税込価格です</p>
         </div>
       </section>
 
@@ -617,7 +622,9 @@
             </li>
           </ol>
           <div class="flow__cta">
-            <p class="flow__cta-label">ご不明点などもお気軽にご相談ください</p>
+            <p class="flow__cta-label">
+              \ご不明点などもお気軽にご相談ください/
+            </p>
             <a href="https://lin.ee/qXpfxsaw" class="btn btn--green"
               >LINEで無料体験を予約する</a
             >
@@ -863,7 +870,7 @@
       <div class="footer__logo">pilatesroom はろこあ</div>
       <nav class="footer__nav">
         <a href="#promise">３つの約束</a>
-        <a href="#instructor">講師紹介</a>
+        <a href="#trainer">講師紹介</a>
         <a href="#voice">お客様の声</a>
         <a href="#lesson">レッスン</a>
         <a href="#price">料金</a>
