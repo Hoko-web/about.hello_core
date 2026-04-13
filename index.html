@@ -37,16 +37,49 @@
       2. AOS v2.3.1    … スクロール連動フェードインアニメーション
       ============================================ -->
 
-    <!-- Google Fonts: Noto Sans JP（本文）/ Noto Serif JP（見出しアクセント） -->
+    <!-- LCP画像を最優先で取得（ヒーロー1枚目） -->
+    <link
+      rel="preload"
+      as="image"
+      href="./img/hero_photo1.JPG"
+      fetchpriority="high"
+    />
+
+    <!-- 外部ドメインへの接続を事前確立 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+
+    <!-- Google Fonts: Noto Sans JP（本文）/ Noto Serif JP（見出しアクセント）
+         レンダリングブロック防止のため media トリックで非同期読み込み -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700&family=Noto+Serif+JP:wght@200;400;600&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700&family=Noto+Serif+JP:wght@200;400;600&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700&family=Noto+Serif+JP:wght@200;400;600&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
-    <!-- AOS: スクロール時のフェードインアニメーション用CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- AOS: スクロール時のフェードインアニメーション用CSS（非ブロッキング） -->
+    <link
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    </noscript>
 
     <!-- ============================================
       スタイルシート
@@ -91,6 +124,10 @@
               src="./img/Instagram_logo.png"
               alt="Instagram logo"
               class="final-cta__ig-logo"
+              width="5000"
+              height="5000"
+              loading="lazy"
+              decoding="async"
           /></a>
         </div>
       </div>
@@ -102,6 +139,10 @@
             src="./img/はろこあ_logo.png"
             alt="pilatesroom はろこあ"
             class="header__logo-img"
+            width="2119"
+            height="2067"
+            decoding="async"
+            fetchpriority="high"
           />
         </a>
         <!-- ====== PC用ナビ　====== -->
@@ -146,16 +187,28 @@
             src="./img/hero_photo1.JPG"
             alt="ピラティスレッスンの様子"
             class="hero__photo is-active"
+            width="3600"
+            height="2400"
+            fetchpriority="high"
+            decoding="async"
           />
           <img
             src="./img/hero_photo2.JPG"
             alt="マットピラティスの風景"
             class="hero__photo"
+            width="3600"
+            height="2400"
+            loading="lazy"
+            decoding="async"
           />
           <img
             src="./img/hero_photo3.JPG"
             alt="はろこあのスタジオ内観"
             class="hero__photo"
+            width="3600"
+            height="2400"
+            loading="lazy"
+            decoding="async"
           />
           <!-- グラデーションオーバーレイ -->
           <div class="hero__photo-overlay"></div>
@@ -290,6 +343,10 @@
               src="./img/instructor.JPG"
               alt="講師 鈴木一美"
               class="instructor__photo"
+              width="1045"
+              height="1567"
+              loading="lazy"
+              decoding="async"
             />
 
             <div class="instructor__info">
@@ -428,7 +485,14 @@
           <h2 class="section-title">レッスンについて</h2>
           <div class="lesson__card" data-aos="fade-up">
             <div class="lesson__card-img">
-              <img src="./img/lesson_gloup2.JPG" alt="グループレッスン写真" />
+              <img
+                src="./img/lesson_gloup2.JPG"
+                alt="グループレッスン写真"
+                width="2400"
+                height="3600"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="lesson__card-body">
               <h3 class="lesson__card-title">
@@ -849,6 +913,10 @@
                 src="./img/Instagram_logo.png"
                 alt="Instagram logo"
                 class="final-cta__ig-logo"
+                width="5000"
+                height="5000"
+                loading="lazy"
+                decoding="async"
             /></a>
           </div>
         </div>
@@ -898,8 +966,8 @@
       JavaScript
       ============================================ -->
     <!-- AOS: スクロールアニメーション -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <!-- メインスクリプト（AOS・固定バー・FAQ・ハンバーガー・講師メッセージ開閉・スライドショー） -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>
