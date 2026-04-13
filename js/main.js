@@ -7,10 +7,13 @@
 //
 // それ以外はすべてバニラJS（Vanilla JavaScript）で実装
 //
-// 機能一覧:
+// 機能一覧（HTMLの登場順）:
 //   1. AOS 初期化
-//   2. 固定CTAバーの表示制御（Intersection Observer）
-//   3. FAQ アコーディオン
+//   2. ハンバーガーメニュー
+//   3. Hero 写真スライドショー
+//   4. 講師メッセージ「続きを読む」開閉
+//   5. FAQ アコーディオン
+//   6. 固定CTAバーの表示制御（Intersection Observer）
 // ============================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,42 +25,92 @@ document.addEventListener("DOMContentLoaded", () => {
   // 公式: https://michalsnik.github.io/aos/
   if (typeof AOS !== "undefined") {
     AOS.init({
-      duration: 800, // アニメーション時間（ms）
-      easing: "ease-out", // イージング関数
-      once: true, // true = 一度だけ実行（スクロール戻りで再実行しない）
-      offset: 60, // ビューポート下端からのオフセット（px）
+      duration: 800,
+      easing: "ease-out",
+      once: true,
+      offset: 60,
     });
   }
 
   // ============================================
-  // 2. 固定CTAバーの表示制御
+  // 2. ハンバーガーメニュー
   // ============================================
-  // Intersection Observer API を使い、ヒーローセクションが
-  // 画面外に出たタイミングで固定バーを表示する
-  const fixedBar = document.getElementById("fixedBar");
-  const hero = document.querySelector(".hero");
+  // 動作の流れ:
+  //   1. ハンバーガーボタンをクリック
+  //   2. ボタンに .is-open → CSSで線が × にトランスフォーム
+  //   3. sp-nav に .is-open → CSSで右からスライドイン
+  //   4. body に .is-nav-open → 背景スクロールを無効化
 
-  if (fixedBar && hero) {
-    const barObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            // ヒーローが見えなくなった → バーを表示
-            fixedBar.classList.add("is-visible");
-          } else {
-            // ヒーローが見えている → バーを非表示
-            fixedBar.classList.remove("is-visible");
-          }
-        });
-      },
-      { threshold: 0 }, // 少しでも画面外に出たら発火
-    );
+  const hamburger = document.getElementById("jsHamburger");
+  const spNav = document.getElementById("jsSpNav");
+  const spNavOverlay = document.getElementById("jsSpNavOverlay");
 
-    barObserver.observe(hero);
+  function toggleMenu() {
+    const isOpen = hamburger.classList.contains("is-open");
+
+    if (isOpen) {
+      hamburger.classList.remove("is-open");
+      spNav.classList.remove("is-open");
+      document.body.classList.remove("is-nav-open");
+      hamburger.setAttribute("aria-label", "メニューを開く");
+    } else {
+      hamburger.classList.add("is-open");
+      spNav.classList.add("is-open");
+      document.body.classList.add("is-nav-open");
+      hamburger.setAttribute("aria-label", "メニューを閉じる");
+    }
+  }
+
+  if (hamburger && spNav) {
+    hamburger.addEventListener("click", toggleMenu);
+    if (spNavOverlay) {
+      spNavOverlay.addEventListener("click", toggleMenu);
+    }
+    // ナビリンククリック時もメニューを閉じる（ページ内遷移のため）
+    const spNavLinks = spNav.querySelectorAll(".sp-nav__link");
+    spNavLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (hamburger.classList.contains("is-open")) {
+          toggleMenu();
+        }
+      });
+    });
   }
 
   // ============================================
-  // 3. FAQ アコーディオン
+  // 3. Hero 写真スライドショー
+  // ============================================
+  // .is-active を付け替えてCSSのopacity transitionでクロスフェード
+  const photos = document.querySelectorAll(".hero__photo");
+  if (photos.length > 0) {
+    let current = 0;
+
+    setInterval(() => {
+      photos[current].classList.remove("is-active");
+      current = (current + 1) % photos.length;
+      photos[current].classList.add("is-active");
+    }, 4000);
+  }
+
+  // ============================================
+  // 4. 講師メッセージ「続きを読む」開閉
+  // ============================================
+  // 長文メッセージを .is-closed の max-height: 0 で折りたたみ
+  // ボタンテキストも「続きを読む / 閉じる」に連動して切り替え
+  const instructorToggle = document.querySelector(".instructor__toggle");
+  const instructorMore = document.querySelector(".instructor__message-more");
+
+  if (instructorToggle && instructorMore) {
+    instructorToggle.addEventListener("click", () => {
+      instructorMore.classList.toggle("is-closed");
+      const isClosed = instructorMore.classList.contains("is-closed");
+      instructorToggle.textContent = isClosed ? "続きを読む" : "閉じる";
+      instructorToggle.setAttribute("aria-expanded", !isClosed);
+    });
+  }
+
+  // ============================================
+  // 5. FAQ アコーディオン
   // ============================================
   // 質問（dt）をクリックすると回答（dd）の表示/非表示をトグル
   // CSSの .is-closed クラスで max-height と opacity を制御
@@ -80,65 +133,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ============================================
-  // 4. ハンバーガーメニュー
+  // 6. 固定CTAバーの表示制御
   // ============================================
-  // 動作の流れ:
-  //   1. ハンバーガーボタンをクリック
-  //   2. ボタンに .is-open → CSSで線が × にトランスフォーム
-  //   3. sp-nav に .is-open → CSSで右からスライドイン
-  //   4. body に .is-nav-open → 背景スクロールを無効化
+  // Intersection Observer API を使い、ヒーローセクションが
+  // 画面外に出たタイミングで固定バーを表示する
+  const fixedBar = document.getElementById("fixedBar");
+  const hero = document.querySelector(".hero");
 
-  const hamburger = document.getElementById("jsHamburger");
-  const spNav = document.getElementById("jsSpNav");
-  const spNavOverlay = document.getElementById("jsSpNavOverlay");
+  if (fixedBar && hero) {
+    const barObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            fixedBar.classList.add("is-visible");
+          } else {
+            fixedBar.classList.remove("is-visible");
+          }
+        });
+      },
+      { threshold: 0 },
+    );
 
-  // メニューの開閉をトグルする関数
-  function toggleMenu() {
-    const isOpen = hamburger.classList.contains("is-open");
-
-    if (isOpen) {
-      // メニューが開いている → 閉じる
-      hamburger.classList.remove("is-open");
-      spNav.classList.remove("is-open");
-      document.body.classList.remove("is-nav-open");
-    } else {
-      // メニューが閉じている → 開く
-      hamburger.classList.add("is-open");
-      spNav.classList.add("is-open");
-      document.body.classList.add("is-nav-open");
-      hamburger.setAttribute("aria-label", "メニューを閉じる");
-    }
-  }
-
-  if (hamburger && spNav) {
-    // ハンバーガーとオーバーレイの両方にクリックイベントを設定
-    hamburger.addEventListener("click", toggleMenu);
-    if (spNavOverlay) {
-      spNavOverlay.addEventListener("click", toggleMenu);
-    }
-    // ナビゲーション内のリンクをクリックしたときもメニューを閉じる
-    const spNavLinks = spNav.querySelectorAll(".sp-nav__link");
-    spNavLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        // メニューが開いていれば閉じる
-        if (hamburger.classList.contains("is-open")) {
-          toggleMenu();
-        }
-      });
-    });
-  }
-  // ============================================
-  // 5. Hero 写真スライドショー
-  // ４秒ごとにクロスフェードで切り替え
-  // ============================================
-  const photos = document.querySelectorAll(".hero__photo");
-  if (photos.length > 0) {
-    let current = 0;
-
-    setInterval(() => {
-      photos[current].classList.remove("is-active");
-      current = (current + 1) % photos.length;
-      photos[current].classList.add("is-active");
-    }, 4000);
+    barObserver.observe(hero);
   }
 });

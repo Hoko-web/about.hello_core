@@ -54,6 +54,13 @@ img {
   }
 }
 
+// --- SP専用改行（タブレット以上で非表示） ---
+.br-sp {
+  @include tablet {
+    display: none;
+  }
+}
+
 // --- 開発用: プレースホルダー画像 ---
 // 実装時に実際の <img> に差し替えてください
 .placeholder-img {

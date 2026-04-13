@@ -9,13 +9,27 @@
     <link
       rel="icon"
       type="image/png"
-      sizes="32 * 32"
+      sizes="32x32"
       href="./img/はろこあ_logo.png"
     />
     <meta
       name="description"
       content="愛知県新城市で女性専用ピラティス教室「pilatesroom はろこあ」です！初心者大歓迎・運動不足だと感じている方も是非！少人数制レッスンとパーソナルレッスンをご用意しております。まずはLINEで無料体験のご予約お待ちしております！"
     />
+
+    <!-- OGP: SNS・LINEでシェアされた時のプレビューカード表示
+         デプロイ後に og:image と og:url を本番URLに書き換えること -->
+    <meta
+      property="og:title"
+      content="pilatesroom はろこあ | 愛知県新城市 女性のためのピラティス教室"
+    />
+    <meta
+      property="og:description"
+      content="初心者歓迎・女性専用のピラティス教室。まずは無料体験から。"
+    />
+    <meta property="og:image" content="https://example.com/img/ogp.jpg" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:type" content="website" />
 
     <!-- ============================================
       外部ライブラリ（2つ）
@@ -69,7 +83,10 @@
           >LINEで無料体験を<br />予約する</a
         >
         <div class="final-cta__ig">
-          <a href="https://www.instagram.com/hello__core?igsh=dHl6ZmRqNTRhZm9w&utm_source=qr" target="_blank" rel="noopener"
+          <a
+            href="https://www.instagram.com/hello__core?igsh=dHl6ZmRqNTRhZm9w&utm_source=qr"
+            target="_blank"
+            rel="noopener"
             ><img
               src="./img/Instagram_logo.png"
               alt="Instagram logo"
@@ -103,8 +120,7 @@
             >無料体験を予約する</a
           >
 
-          <!-- ====== ハンバーガーボタン（SP・TBのみ） ====== -->
-          <!-- ====== span ３本線 → jsで .is-open 付与時に　×にトランスフォーム ====== -->
+          <!-- ハンバーガーボタン: JSで .is-open 付与時に × にトランスフォーム -->
           <button
             class="hamburger"
             id="jsHamburger"
@@ -121,14 +137,26 @@
     <main>
       <!-- ============================================
         Hero - メインビジュアル
-        波型SVG使用
+        写真クロスフェード（JS制御） + 波型SVGで次セクションへ接続
         ============================================ -->
       <section class="hero" id="top">
         <!-- 写真スライドショー -->
         <div class="hero__photos">
-          <img src="./img/photo1.JPG" alt="" class="hero__photo is-active" />
-          <img src="./img/photo2.JPG" alt="" class="hero__photo" />
-          <img src="./img/photo3.JPG" alt="" class="hero__photo" />
+          <img
+            src="./img/hero_photo1.JPG"
+            alt="ピラティスレッスンの様子"
+            class="hero__photo is-active"
+          />
+          <img
+            src="./img/hero_photo2.JPG"
+            alt="マットピラティスの風景"
+            class="hero__photo"
+          />
+          <img
+            src="./img/hero_photo3.JPG"
+            alt="はろこあのスタジオ内観"
+            class="hero__photo"
+          />
           <!-- グラデーションオーバーレイ -->
           <div class="hero__photo-overlay"></div>
         </div>
@@ -138,7 +166,9 @@
             <span class="hero__title-line">60分をここで。</span>
           </h1>
           <p class="hero__sub">
-            愛知県新城市で女性のための<br />無理なく続けられるピラティス教室
+            愛知県新城市で女性のための<br
+              class="br-sp"
+            />無理なく続けられるピラティス教室
           </p>
           <ul class="hero__badges">
             <li class="hero__badge">女性専用</li>
@@ -169,25 +199,27 @@
       <section class="empathy">
         <div class="container" data-aos="fade-up">
           <p class="empathy__lead">
-            「運動は苦手」「続けられるかな」<br />
-            そう思った<strong>あなた</strong>に<br />
-            はろこあ があります。
+            「運動は苦手」<br class="br-sp" />「続けられるかな」<br />
+            そう思った<strong>あなた</strong>に
+            <br />”はろこあ”があります。
           </p>
           <ul class="empathy__list">
             <li class="empathy__item">
-              運動したいけど、何から始めたらいいか分からない
+              運動したいけど、<br />何から始めたらいいか分からない
             </li>
             <li class="empathy__item">
-              ジムに行ってみたけど、雰囲気が合わなかった
+              ジムに行ってみたけど、<br />雰囲気が合わなかった
             </li>
             <li class="empathy__item">
-              腰痛が気になるけど、激しい運動はちょっと...
+              腰痛が気になるけど、<br />激しい運動はちょっと...
             </li>
-            <li class="empathy__item">最近、体力の衰えを感じるようになった</li>
+            <li class="empathy__item">
+              最近、体力の衰えを<br class="br-sp" />感じるようになった
+            </li>
           </ul>
           <p class="empathy__closing">
-            ひとつでも当てはまったら、<br />はろこあ
-            がお役に立てるかもしれません。
+            ひとつでも当てはまったら、<br class="br-sp" />”はろこあ”
+            がお役に立てるかも<br class="br-sp" />しれません。
           </p>
         </div>
       </section>
@@ -200,27 +232,45 @@
       <section class="promise" id="promise">
         <div class="container">
           <p class="section-label">PROMISE</p>
-          <h2 class="section-title">はろこあの3つの約束</h2>
+          <h2 class="section-title">”はろこあ”の3つの約束</h2>
           <div class="promise__blocks">
             <div class="promise__block" data-aos="fade-up">
               <span class="promise__num">01</span>
               <h3 class="promise__heading">はじめてでも、大丈夫</h3>
               <p class="promise__text">
-                基礎から分かりやすく丁寧にレッスンします。年齢や体力に合わせて、無理のないペースで進めていきます。
+                基礎から分かりやすく丁寧に<br
+                  class="br-sp"
+                />レッスンします。年齢や体力に合わせて、<br
+                  class="br-sp"
+                />無理のないペースで進めていきます。
               </p>
             </div>
             <div class="promise__block" data-aos="fade-up" data-aos-delay="100">
               <span class="promise__num">02</span>
               <h3 class="promise__heading">一人ひとりと向き合います</h3>
               <p class="promise__text">
-                「ついていけなかったらどうしよう」の心配はいりません。お一人おひとりが効果を実感していただけるよう最後までサポートします。
+                「ついていけなかったらどうしよう」<br
+                  class="br-sp"
+                />の心配はいりません。<br />お一人おひとりが効果を<br
+                  class="br-sp"
+                />実感していただけるよう<br
+                  class="br-sp"
+                />最後までサポートします。
               </p>
             </div>
             <div class="promise__block" data-aos="fade-up" data-aos-delay="200">
               <span class="promise__num">03</span>
               <h3 class="promise__heading">女性だけの、息ぬき空間</h3>
               <p class="promise__text">
-                周りを気にせずリラックスしていただけます。忙しい日々を過ごすあなたに、あなたの体と向き合う、あなただけの時間をつくります。
+                周りを気にせずリラックス<br
+                  class="br-sp"
+                />していただけます。<br
+                  class="br-sp"
+                />忙しい日々を過ごすあなたに、<br
+                  class="br-sp"
+                />あなたの体と向き合う、<br
+                  class="br-sp"
+                />あなただけの時間をつくります。
               </p>
             </div>
           </div>
@@ -230,25 +280,49 @@
       <!-- ============================================
         Instructor - 講師紹介
         大きな写真 + 名前 + メッセージカード
-        タブレット(768px〜)では横並び2カラム
+        長文メッセージは「続きを読む」で開閉（JS制御）
         ============================================ -->
       <section class="instructor" id="instructor">
         <div class="container" data-aos="fade-up">
           <p class="section-label section-label--green">INSTRUCTOR</p>
           <div class="instructor__content">
-            <!-- 講師写真: 実際の画像に差し替え -->
-            <img src="./img/母写真１.JPG" alt="" class="instructor__photo" />
+            <img
+              src="./img/instructor.JPG"
+              alt="講師 鈴木一美"
+              class="instructor__photo"
+            />
 
             <div class="instructor__info">
               <h3 class="instructor__name">鈴木 一美</h3>
               <p class="instructor__name-sub">すずき かずみ</p>
               <div class="instructor__message">
                 <p>
-                  ここに講師からのメッセージが入ります。ピラティスとの出会い、指導への想い、受講者への気持ちなど。「はじめてでも安心して来てほしい」という温かい想いが伝わる文章を記載します。
-                  ここに講師からのメッセージが入ります。ピラティスとの出会い、指導への想い、受講者への気持ちなど。「はじめてでも安心して来てほしい」という温かい想いが伝わる文章を記載します。
-                  ここに講師からのメッセージが入ります。ピラティスとの出会い、指導への想い、受講者への気持ちなど。「はじめてでも安心して来てほしい」という温かい想いが伝わる文章を記載します。
-                  ここに講師からのメッセージが入ります。ピラティスとの出会い、指導への想い、受講者への気持ちなど。「はじめてでも安心して来てほしい」という温かい想いが伝わる文章を記載します。
+                  「動ける体」は当たり前じゃなかった。
+                  そう気づいたのは、交通事故がきっかけです。<br />
+                  それまで何も考えずにできていた動作が、突然できなくなる。
+                  動けることのありがたさを、身をもって知りました。
                 </p>
+                <div class="instructor__message-more is-closed">
+                  <p>
+                    もともとピラティスを始めたのは、ダイエットのため。
+                    けれど続けるうちに、姿勢が整い、体の調子がよくなっていくのを感じるようになりました。
+                    ピラティスは「痩せるため」だけじゃない。体そのものを整えてくれるものなんだと気づいたんです。<br />
+                    事故後、思うように動けない日々の中で支えになったのも、それまで続けてきたピラティス。体は自分の力で整えていける——それが確信に変わりました。
+                    <br />介護の現場でも、たくさんの方の体と向き合ってきた中で感じるのは、動ける体は人生の土台になるということ。そして、その土台は今からでもつくれるということ。
+                    5年後も、10年後も、自分らしく動ける体でいるために。<br />
+                    「はろこあ」は、Hello
+                    Core——自分の体に気づき、向き合うという想いを込めた名前です。
+                    本来の姿勢を、自分の力で整えていける体へ。
+                    自分の体と向き合う時間を始めてみませんか?
+                  </p>
+                </div>
+                <button
+                  class="instructor__toggle"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  続きを読む
+                </button>
               </div>
             </div>
           </div>
@@ -257,8 +331,8 @@
 
       <!-- ============================================
         Voice - お客様の声
-        大きな引用符（装飾）+ 感想テキスト
-        タブレット: 2列 / デスクトップ: 3列
+        大きな引用符（CSS疑似要素で装飾）+ 感想テキスト
+        タブレット以上: 2列グリッド
         ============================================ -->
       <section class="voice" id="voice">
         <div class="container">
@@ -305,6 +379,20 @@
               </p>
               <cite class="voice__who">Y.T さん（30代・育児中）</cite>
             </article>
+            <article
+              class="voice__item"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <p class="voice__before">通う前：産後の体型が気になっていた</p>
+              <blockquote class="voice__quote">
+                "ここにお客様の感想が入ります。"
+              </blockquote>
+              <p class="voice__body">
+                ここにお客様の感想が入ります。自分の時間が持てるようになったこと、身体の変化など。
+              </p>
+              <cite class="voice__who">Y.T さん（30代・育児中）</cite>
+            </article>
           </div>
         </div>
       </section>
@@ -315,32 +403,36 @@
         ============================================ -->
       <section class="mid-cta">
         <div class="container" data-aos="fade-up">
-          <p class="mid-cta__lead">まずは気軽に<br />体験してみませんか？</p>
+          <p class="mid-cta__lead">
+            まずは気軽に<br class="br-sp" />体験してみませんか？
+          </p>
           <p class="mid-cta__sub">
             初回の体験レッスンは<strong>無料</strong>です
           </p>
-          <a href="https://lin.ee/qXpfxsaw" class="btn btn--green">LINEで無料体験を予約する</a>
-          <p class="mid-cta__note">体験後の無理な勧誘はありません</p>
+          <a href="https://lin.ee/qXpfxsaw" class="btn btn--green"
+            >LINEで無料体験を予約する</a
+          >
         </div>
       </section>
 
       <!-- ============================================
         Lesson - レッスン内容
-        グループレッスンを大きく表示
-        プライベートレッスンは「ある」ことだけ控えめに掲載
+        
+        グループレッスンをメインに大きく表示
+        プライベートレッスンは存在のみ控えめに掲載
+        TB以上: 画像+テキストの2カラムカード（absolute配置で画像高さを制御）
         ============================================ -->
       <section class="lesson" id="lesson">
         <div class="container">
           <p class="section-label">LESSON</p>
           <h2 class="section-title">レッスンについて</h2>
           <div class="lesson__card" data-aos="fade-up">
-            <!-- レッスン写真: 実際の画像に差し替え -->
-            <div class="lesson__card-img placeholder-img">
-              グループレッスン写真
+            <div class="lesson__card-img">
+              <img src="./img/lesson_gloup2.JPG" alt="グループレッスン写真" />
             </div>
             <div class="lesson__card-body">
               <h3 class="lesson__card-title">
-                グループレッスン（マットピラティス）
+                グループレッスン<br class="br-sp" />（マットピラティス）
               </h3>
               <p class="lesson__card-meta">60分 / 最大4名の少人数制</p>
               <p class="lesson__card-desc">
@@ -377,14 +469,11 @@
             料金<span class="section-title__sub">グループレッスン</span>
           </h2>
 
-          <!-- 無料体験バナー -->
           <div class="price__free-box">
-            <!-- <span class="price__free-tag">TRIAL</span> -->
             <p class="price__free-value">今なら体験レッスン無料</p>
             <p class="price__free-sub">入会金もかかりません</p>
           </div>
 
-          <!-- 単発 -->
           <div class="price__item">
             <div class="price__item-info">
               <span class="price__item-name">単発</span>
@@ -392,11 +481,10 @@
             </div>
             <div class="price__item-right">
               <span class="price__item-amount">3,000円</span>
-              <!-- <span class="price__item-per">1回 3,000円</span> -->
             </div>
           </div>
 
-          <!-- 8回券 -->
+          <!-- 回数券: 回数が多いほど1回あたりの単価が下がる料金設計 -->
           <div class="price__item">
             <div class="price__item-info">
               <span class="price__item-name">8回券</span>
@@ -408,7 +496,7 @@
             </div>
           </div>
 
-          <!-- 12回券（いちばん人気） -->
+          <!-- 12回券: 推奨プラン。border + badge で視覚的に強調 -->
           <div class="price__recommend">
             <span class="price__recommend-badge">いちばん人気</span>
             <div class="price__recommend-row">
@@ -430,7 +518,6 @@
             </p>
           </div>
 
-          <!-- 24回券 -->
           <div class="price__item">
             <div class="price__item-info">
               <span class="price__item-name">24回券</span>
@@ -444,7 +531,7 @@
 
           <p class="price__note">※ 全て税込価格です</p>
 
-          <!-- プライベートレッスン料金（控えめ表示） -->
+          <!-- パーソナルレッスン: グループより控えめなトーンで表示 -->
           <div class="price__private">
             <h3 class="price__private-heading">
               パーソナルレッスン（マンツーマン）
@@ -539,6 +626,115 @@
       </section>
 
       <!-- ============================================
+        Trial Day - 体験当日の流れ（リリース後に公開予定）
+        タイムライン形式で4ステップを表示
+        写真素材が揃い次第、コメントアウトを解除する
+        ============================================ -->
+      <!-- <section class="trial-day" id="trial-day">
+        <div class="container" data-aos="fade-up">
+          <p class="section-label">TRIAL DAY</p>
+          <h2 class="section-title">体験当日の流れ</h2>
+          <p class="trial-day__intro">約60分のレッスンです</p>
+
+          <div class="trial-day__timeline">
+
+            <!-- Step 1 -->
+      <!-- <div class="trial-day__step">
+              <div class="trial-day__node">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+              <span class="trial-day__number">STEP 01</span>
+              <div class="trial-day__header">
+                <h3 class="trial-day__title">ヒアリング</h3>
+                <span class="trial-day__time">約10分</span>
+              </div>
+              <div class="trial-day__body">
+                <div class="trial-day__photo">
+                  <img src="" alt="ヒアリングの様子" />
+                </div>
+                <p class="trial-day__text">
+                  お身体の悩みや目標をお聞かせください。
+                </p>
+              </div>
+            </div> -->
+
+      <!-- Step 2 -->
+      <!-- <div class="trial-day__step">
+              <div class="trial-day__node">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <span class="trial-day__number">STEP 02</span>
+              <div class="trial-day__header">
+                <h3 class="trial-day__title">お身体の状態チェック</h3>
+                <span class="trial-day__time">約10分</span>
+              </div>
+              <div class="trial-day__body">
+                <div class="trial-day__photo">
+                  <img src="" alt="お身体の状態チェックの様子" />
+                </div>
+                <p class="trial-day__text">
+                  現在の姿勢や柔軟性を一緒に確認します。
+                </p>
+              </div>
+            </div> -->
+
+      <!-- Step 3 -->
+      <!-- <div class="trial-day__step">
+              <div class="trial-day__node">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                </svg>
+              </div>
+              <span class="trial-day__number">STEP 03</span>
+              <div class="trial-day__header">
+                <h3 class="trial-day__title">あなたに合わせたレッスン</h3>
+                <span class="trial-day__time">約30分</span>
+              </div>
+              <div class="trial-day__body">
+                <div class="trial-day__photo">
+                  <img src="" alt="レッスンの様子" />
+                </div>
+                <p class="trial-day__text">
+                  お一人おひとりに合った内容で進めます。
+                </p>
+              </div>
+            </div> -->
+
+      <!-- Step 4 -->
+      <!-- <div class="trial-day__step">
+              <div class="trial-day__node">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 20h10" />
+                  <path d="M12 20v-8" />
+                  <path d="M12 12c-2-2.67-6-2.67-6-8 3.33 0 5.33 1.33 6 4" />
+                  <path d="M12 12c2-2.67 6-2.67 6-8-3.33 0-5.33 1.33-6 4" />
+                </svg>
+              </div>
+              <span class="trial-day__number">STEP 04</span>
+              <div class="trial-day__header">
+                <h3 class="trial-day__title">今後の変化について</h3>
+                <span class="trial-day__time">約10分</span>
+              </div>
+              <div class="trial-day__body">
+                <div class="trial-day__photo">
+                  <img src="" alt="今後の変化についての説明" />
+                </div>
+                <p class="trial-day__text">
+                  続けることでどう変わるかお伝えします。
+                </p>
+              </div>
+            </div> -->
+      <!-- 
+          </div>
+        </div>
+      </section> -->
+
+      <!-- ============================================
         FAQ - よくあるご質問
         アコーディオン開閉（main.js で制御）
         JS無効時は全項目が開いた状態で表示される
@@ -578,7 +774,7 @@
                 体験後、必ず入会しないといけませんか？
               </dt>
               <dd class="faq__answer">
-                いいえ、そんなことはありません。無理な勧誘はしませんので、じっくりご検討ください。
+                いいえ、そんなことはありません。強引な勧誘はしませんので、じっくりご検討ください。
               </dd>
             </div>
             <div class="faq__item">
@@ -602,7 +798,11 @@
           <dl class="access__info">
             <div class="access__row">
               <dt>住所</dt>
-              <dd>愛知県新城市市場台（詳細は予約確定後にご案内します）</dd>
+              <dd>
+                愛知県新城市市場台<br
+                  class="br-sp"
+                />（詳細は予約確定後にご案内します）
+              </dd>
             </div>
             <div class="access__row">
               <dt>駐車場</dt>
@@ -635,14 +835,16 @@
         <div class="container" data-aos="fade-up">
           <p class="final-cta__main">無料体験 受付中</p>
           <p class="final-cta__sub">
-            あなたの「はじめの一歩」を、はろこあで一緒に。
+            あなたの「はじめの一歩」を、<br class="br-sp" />”はろこあ”で一緒に。
           </p>
           <a href="https://lin.ee/qXpfxsaw" class="btn btn--white"
             >LINEで無料体験を予約する</a
           >
-          <p class="final-cta__note">体験後の無理な勧誘はありません</p>
           <div class="final-cta__ig">
-            <a href="https://www.instagram.com/hello__core?igsh=dHl6ZmRqNTRhZm9w&utm_source=qr" target="_blank" rel="noopener"
+            <a
+              href="https://www.instagram.com/hello__core?igsh=dHl6ZmRqNTRhZm9w&utm_source=qr"
+              target="_blank"
+              rel="noopener"
               ><img
                 src="./img/Instagram_logo.png"
                 alt="Instagram logo"
@@ -670,10 +872,11 @@
         <a href="#access">アクセス</a>
       </nav>
       <div class="footer__legal">
-        <a href="./privacy_policy/file.html">プライバシーポリシー</a>
+        <a href="./privacy_policy/">プライバシーポリシー</a>
       </div>
       <p class="footer__copy">
-        &copy; 2026 pilatesroom はろこあ All rights reserved.
+        &copy; 2026 pilatesroom はろこあ <br class="br-sp" />All rights
+        reserved.
       </p>
     </footer>
 
@@ -696,7 +899,7 @@
       ============================================ -->
     <!-- AOS: スクロールアニメーション -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- メインスクリプト（AOS初期化・固定バー制御・FAQアコーディオン） -->
+    <!-- メインスクリプト（AOS・固定バー・FAQ・ハンバーガー・講師メッセージ開閉・スライドショー） -->
     <script src="js/main.js"></script>
   </body>
 </html>

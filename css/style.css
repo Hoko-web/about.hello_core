@@ -47,6 +47,12 @@ img {
   }
 }
 
+@media (min-width: 768px) {
+  .br-sp {
+    display: none;
+  }
+}
+
 .placeholder-img {
   background: #c8d5b9;
   display: -webkit-box;
@@ -403,17 +409,24 @@ body.is-nav-open {
   opacity: 0.5;
 }
 .footer__nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
   margin-bottom: 16px;
   font-size: 12px;
+}
+@media (min-width: 768px) {
+  .footer__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 16px;
+  }
 }
 .footer__nav a {
   color: rgba(255, 255, 255, 0.6);
@@ -666,6 +679,12 @@ body.is-nav-open {
           animation: heroFadeUp 0.8s ease 0.9s forwards;
   margin-bottom: 12px;
 }
+@media (min-width: 768px) {
+  .hero__free-label {
+    max-width: 270px;
+    text-align: center;
+  }
+}
 
 .hero__content .btn {
   opacity: 0;
@@ -880,7 +899,7 @@ body.is-nav-open {
   color: #8a8a7a;
   line-height: 1.8;
   margin-bottom: 14px;
-  max-width: 280px;
+  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -968,6 +987,27 @@ body.is-nav-open {
   .instructor__message {
     font-size: 14px;
   }
+}
+.instructor__message-more {
+  max-height: 600px;
+  opacity: 1;
+  overflow: hidden;
+  -webkit-transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+.instructor__message-more.is-closed {
+  max-height: 0;
+  opacity: 0;
+}
+.instructor__toggle {
+  font-size: 12px;
+  color: #7a9e68;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 12px auto 0;
+  letter-spacing: 1px;
 }
 
 .voice {
@@ -1192,12 +1232,28 @@ body.is-nav-open {
   }
 }
 .lesson__card-img {
+  overflow: hidden;
+}
+.lesson__card-img img {
+  width: 100%;
   height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center 46%;
+     object-position: center 46%;
+  -webkit-transform: scale(1.4) translateX(4%);
+          transform: scale(1.4) translateX(4%);
 }
 @media (min-width: 768px) {
   .lesson__card-img {
-    height: 100%;
+    position: relative;
     min-height: 200px;
+  }
+  .lesson__card-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
   }
 }
 .lesson__card-body {
@@ -1492,6 +1548,201 @@ body.is-nav-open {
 }
 @media (min-width: 1024px) {
   .flow .container {
+    max-width: 700px;
+  }
+}
+
+.trial-day {
+  background: #f7f4ef;
+  padding: 56px 0;
+}
+@media (min-width: 768px) {
+  .trial-day {
+    padding: 64px 0;
+  }
+}
+@media (min-width: 1024px) {
+  .trial-day {
+    padding: 80px 0;
+  }
+}
+.trial-day__intro {
+  text-align: center;
+  font-size: 12px;
+  color: #8a8a7a;
+  margin-bottom: 40px;
+}
+.trial-day__timeline {
+  position: relative;
+  padding-left: 28px;
+}
+@media (min-width: 768px) {
+  .trial-day__timeline {
+    padding-left: 34px;
+  }
+}
+.trial-day__timeline::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 20px;
+  bottom: 20px;
+  width: 1.5px;
+  background: #c8d5b9;
+}
+@media (min-width: 768px) {
+  .trial-day__timeline::before {
+    left: 21px;
+  }
+}
+.trial-day__step {
+  position: relative;
+  padding: 0 0 36px 28px;
+}
+@media (min-width: 768px) {
+  .trial-day__step {
+    padding-left: 34px;
+  }
+}
+.trial-day__step:last-child {
+  padding-bottom: 0;
+}
+.trial-day__step + .trial-day__step::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #c8d5b9;
+  opacity: 0.5;
+}
+.trial-day__node {
+  position: absolute;
+  left: -28px;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border: 1.5px solid #c8d5b9;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .trial-day__node {
+    left: -34px;
+    width: 42px;
+    height: 42px;
+  }
+}
+.trial-day__node svg {
+  width: 16px;
+  height: 16px;
+  stroke: #7a9e68;
+  stroke-width: 1.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (min-width: 768px) {
+  .trial-day__node svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+.trial-day__number {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", Georgia, serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #7a9e68;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+  display: block;
+}
+.trial-day__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.trial-day__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #4a4a3f;
+  line-height: 1.4;
+}
+@media (min-width: 768px) {
+  .trial-day__title {
+    font-size: 16px;
+  }
+}
+.trial-day__time {
+  font-size: 10px;
+  color: #7a9e68;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.trial-day__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 14px;
+}
+.trial-day__photo {
+  width: 110px;
+  min-width: 110px;
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  background: #c8d5b9;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .trial-day__photo {
+    width: 140px;
+    min-width: 140px;
+  }
+}
+.trial-day__photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.trial-day__text {
+  font-size: 12px;
+  color: #8a8a7a;
+  line-height: 1.8;
+  padding-top: 2px;
+}
+@media (min-width: 768px) {
+  .trial-day__text {
+    font-size: 13px;
+  }
+}
+@media (min-width: 768px) {
+  .trial-day .container {
+    max-width: 580px;
+  }
+}
+@media (min-width: 1024px) {
+  .trial-day .container {
     max-width: 700px;
   }
 }
