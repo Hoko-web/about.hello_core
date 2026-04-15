@@ -1003,11 +1003,11 @@ body.is-nav-open {
   }
 }
 .trainer__message-more {
-  max-height: 600px;
+  max-height: 1000px;
   opacity: 1;
   overflow: hidden;
-  -webkit-transition: max-height 0.4s ease, opacity 0.3s ease;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  -webkit-transition: max-height 1.4s ease, opacity 0.3s ease;
+  transition: max-height 1.4s ease, opacity 0.3s ease;
 }
 .trainer__message-more.is-closed {
   max-height: 0;
