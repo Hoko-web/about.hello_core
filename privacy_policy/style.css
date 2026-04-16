@@ -2,6 +2,17 @@
    プライバシーポリシーページ固有スタイル
    ============================================ */
 
+/* フッターを画面下部に固定 */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 .privacy-policy {
   padding: 60px 0 80px;
 }
