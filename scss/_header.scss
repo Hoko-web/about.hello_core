@@ -8,7 +8,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: $c-cream;
+  background: $c-bg;
 
   // ヘッダー内部（container を併用）
   &__inner {
@@ -44,8 +44,8 @@
   &__cta-btn {
     font-size: 12px;
     padding: 10px 15px;
-    background: $c-green;
-    color: $c-white;
+    background: $c-primary;
+    color: $c-surface;
     border-radius: 50px;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -76,7 +76,7 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: $c-green;
+    color: $c-primary;
   }
 
   & + .header__nav-link {
@@ -109,7 +109,7 @@
   display: block;
   width: 100%;
   height: 2px;
-  background: $c-dark;
+  background: $c-heading;
   border-radius: 1px;
   position: absolute;
   left: 0;

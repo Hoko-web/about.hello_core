@@ -37,7 +37,7 @@
   width: 80%;
   max-width: 320px;
   height: 100%;
-  background: $c-cream;
+  background: $c-bg;
   padding: 80px 28px 40px;
   overflow-y: auto;
   display: flex;
@@ -72,11 +72,11 @@
   display: block;
   padding: 8px 0;
   font-size: 14px;
-  color: $c-dark;
+  color: $c-heading;
   transition: color 0.3s ease;
 
   &:hover {
-    color: $c-green;
+    color: $c-primary;
   }
 }
 

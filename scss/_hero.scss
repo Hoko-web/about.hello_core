@@ -6,9 +6,9 @@
 // ============================================
 
 .hero {
-  background: $c-green;
+  background: $c-primary;
   padding: 0 0 80px;
-  color: $c-white;
+  color: $c-surface;
   position: relative;
   overflow: hidden;
 
@@ -75,17 +75,17 @@
   z-index: 2;
   background: linear-gradient(
     to right,
-    rgba($c-green, 1) 0%,
-    rgba($c-green, 0.6) 30%,
-    rgba($c-green, 0.05) 100%
+    rgba($c-primary, 1) 0%,
+    rgba($c-primary, 0.6) 30%,
+    rgba($c-primary, 0.05) 100%
   );
 
   @media (max-width: 767px) {
     background: linear-gradient(
       to bottom,
-      rgba($c-green, 0.1) 0%,
-      rgba($c-green, 0.7) 50%,
-      rgba($c-green, 1) 100%
+      rgba($c-primary, 0.1) 0%,
+      rgba($c-primary, 0.7) 50%,
+      rgba($c-primary, 1) 100%
     );
   }
 }

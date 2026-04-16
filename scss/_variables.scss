@@ -3,19 +3,39 @@
 // デザイントークン（カラー・フォント・ブレイクポイント）
 // ============================================
 
-// --- カラーパレット: Botanical Natural ---
-$c-green: #7a9e68; // メインカラー（CTA・アクセント）
-$c-green-dark: #3a5030; // フッター背景
-$c-green-light: #c8d5b9; // 装飾・アクセント（淡）
-$c-cream: #f7f4ef; // 背景色（メイン）
-$c-pale-green: #ebf0e4; // 背景色（グリーン系）
-$c-dark: #4a4a3f; // 見出しテキスト
+// --- 1段目：カラーパレット（色の実体を定義） ---
+// ここだけが「色の名前」を持つ。コンポーネントでは直接使わない。
+$palette-green: #7a9e68;
+$palette-green-dark: #3a5030;
+$palette-green-light: #c8d5b9;
+$palette-cream: #f7f4ef;
+$palette-pale-green: #ebf0e4;
+$palette-dark: #4a4a3f;
+$palette-white: #fff;
+
+// --- 2段目：セマンティックトークン（役割で定義） ---
+// コンポーネントではこちらを使う。
+// ブランドカラーが変わったら、1段目の参照先を変えるだけで全体に反映される。
+
+// ブランドカラー
+$c-primary: $palette-green; // メインカラー（CTA・アクセント）
+$c-primary-dark: $palette-green-dark; // フッター背景
+$c-primary-light: $palette-green-light; // 装飾・アクセント（淡）
+
+// 背景
+$c-bg: $palette-cream; // 背景色（メイン）
+$c-bg-alt: $palette-pale-green; // 背景色（セクション切替用）
+$c-surface: $palette-white; // カード・コンテンツ面の白
+
+// テキスト
+$c-heading: $palette-dark; // 見出しテキスト
 $c-text: #666; // 本文テキスト
 $c-text-light: #8a8a7a; // 補助テキスト
 $c-text-muted: #aaa; // 控えめテキスト
 $c-text-faint: #bbb; // 最も淡いテキスト
+
+// その他
 $c-border: #e8e3d9; // ボーダー・区切り線
-$c-white: #fff;
 
 // --- フォントファミリー ---
 $ff-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;

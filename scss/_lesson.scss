@@ -5,7 +5,7 @@
 // ============================================
 
 .lesson {
-  background: $c-cream;
+  background: $c-bg;
   padding: 56px 0;
 
   @include tablet {
@@ -59,7 +59,7 @@
   // カード本文
   &__card-body {
     padding: 20px;
-    background: $c-white;
+    background: $c-surface;
   }
 
   &__card-title {
@@ -91,8 +91,8 @@
   &__tag {
     font-size: 10px;
     padding: 4px 12px;
-    background: $c-pale-green;
-    color: $c-green;
+    background: $c-bg-alt;
+    color: $c-primary;
     border-radius: 14px;
   }
 
@@ -100,7 +100,7 @@
   &__private {
     margin-top: 12px;
     padding: 16px;
-    background: $c-white;
+    background: $c-surface;
     border-radius: 14px;
     text-align: center;
     font-size: 11px;

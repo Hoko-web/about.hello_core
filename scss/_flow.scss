@@ -5,7 +5,7 @@
 // ============================================
 
 .flow {
-  background: $c-cream;
+  background: $c-bg;
   padding: 56px 0;
 
   @include tablet {
@@ -36,21 +36,21 @@
   &__num {
     width: 32px;
     height: 32px;
-    border: 1.5px solid $c-green-light;
+    border: 1.5px solid $c-primary-light;
     border-radius: 50%;
     font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: $c-green;
+    color: $c-primary;
     font-weight: 600;
   }
 
   &__step-title {
     font-size: 13px;
     font-weight: 600;
-    color: $c-dark;
+    color: $c-heading;
   }
 
   &__step-text {

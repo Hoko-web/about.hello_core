@@ -4,10 +4,10 @@
 // ============================================
 
 .footer {
-  background: $c-green-dark;
+  background: $c-primary-dark;
   padding: 32px 24px;
   text-align: center;
-  color: $c-white;
+  color: $c-surface;
 
   @include tablet {
     padding: 48px 40px;
@@ -41,7 +41,7 @@
       transition: color 0.3s ease;
 
       &:hover {
-        color: $c-white;
+        color: $c-surface;
       }
 
       // & + a {

@@ -4,7 +4,7 @@
 // ============================================
 
 .access {
-  background: $c-cream;
+  background: $c-bg;
   padding: 56px 0;
 
   @include tablet {
@@ -37,7 +37,7 @@
     dt {
       font-weight: 600;
       white-space: nowrap;
-      color: $c-dark;
+      color: $c-heading;
     }
   }
 

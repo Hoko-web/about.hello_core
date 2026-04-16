@@ -11,8 +11,8 @@ html {
 
 body {
   font-family: $ff-sans;
-  color: $c-dark;
-  background: $c-cream;
+  color: $c-heading;
+  background: $c-bg;
   font-size: 14px;
   line-height: 1.8;
   letter-spacing: 1.5px;
@@ -65,7 +65,7 @@ img {
 // --- 開発用: プレースホルダー画像 ---
 // 実装時に実際の <img> に差し替えてください
 .placeholder-img {
-  background: $c-green-light;
+  background: $c-primary-light;
   display: flex;
   align-items: center;
   justify-content: center;

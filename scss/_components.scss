@@ -20,16 +20,16 @@
 
   // グリーンボタン（メインCTA）
   &--green {
-    background: $c-green;
-    color: $c-white;
+    background: $c-primary;
+    color: $c-surface;
     max-width: 280px;
     margin: 0 auto;
   }
 
   // 白ボタン（グリーン背景上で使用）
   &--white {
-    background: $c-white;
-    color: $c-green;
+    background: $c-surface;
+    color: $c-primary;
     max-width: 270px;
     margin: 0 auto;
   }
@@ -37,8 +37,8 @@
   &--menu {
     padding: 10px 20px;
     border-radius: 50px;
-    background: $c-green;
-    color: $c-white;
+    background: $c-primary;
+    color: $c-surface;
     max-width: 260px;
     margin: 0 auto;
   }
@@ -49,13 +49,13 @@
   font-size: 14px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: $c-green;
+  color: $c-primary;
   text-align: center;
   margin-bottom: 6px;
 
   // 淡いグリーン背景セクション用（濃い文字色）
   &--green {
-    color: $c-green;
+    color: $c-primary;
   }
 }
 
@@ -66,7 +66,7 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 28px;
-  color: $c-dark;
+  color: $c-heading;
 
   @include tablet {
     font-size: 20px;

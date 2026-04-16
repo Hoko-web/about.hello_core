@@ -5,7 +5,7 @@
 // ============================================
 
 .voice {
-  background: $c-white;
+  background: $c-surface;
   padding: 56px 0;
 
   @include tablet {
@@ -32,7 +32,7 @@
   // --- 各声カード ---
   &__item {
     padding: 28px 24px;
-    background: $c-cream;
+    background: $c-bg;
     border-radius: 20px;
     margin-bottom: 14px;
     position: relative;
@@ -41,7 +41,7 @@
     &::before {
       content: "\201C"; // 左ダブルクォーテーション
       font-size: 60px;
-      color: $c-green-light;
+      color: $c-primary-light;
       font-family: Georgia, serif;
       position: absolute;
       top: 10px;
@@ -57,7 +57,7 @@
   // --- 通う前の状態 ---
   &__before {
     font-size: 11px;
-    color: $c-green;
+    color: $c-primary;
     margin-bottom: 8px;
     font-style: italic;
   }
@@ -65,7 +65,7 @@
   // --- 引用メッセージ ---
   &__quote {
     font-size: 15px;
-    color: $c-dark;
+    color: $c-heading;
     line-height: 1.9;
     padding-left: 8px;
     margin-bottom: 12px;

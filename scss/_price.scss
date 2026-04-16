@@ -5,7 +5,7 @@
 // ============================================
 
 .price {
-  background: $c-white;
+  background: $c-surface;
   padding: 56px 0;
 
   @include tablet {
@@ -20,7 +20,7 @@
   &__free-box {
     text-align: center;
     padding: 15px;
-    background: $c-pale-green;
+    background: $c-bg-alt;
     border-radius: 16px;
     margin-bottom: 20px;
   }
@@ -28,14 +28,14 @@
   // &__free-tag {
   //   display: block;
   //   font-size: 10px;
-  //   color: $c-green;
+  //   color: $c-primary;
   //   letter-spacing: 2px;
   // }
 
   &__free-value {
     font-size: 20px;
     font-weight: 700;
-    color: $c-green;
+    color: $c-primary;
   }
 
   &__free-sub {
@@ -74,7 +74,7 @@
   &__item-amount {
     font-size: 14px;
     font-weight: 700;
-    color: $c-green;
+    color: $c-primary;
     display: block;
 
     // おすすめプラン用（大きめ表示）
@@ -93,7 +93,7 @@
   // --- おすすめプラン（12回券） ---
   // ボーダーとバッジで視覚的に目立たせる
   &__recommend {
-    border: 2px solid $c-green;
+    border: 2px solid $c-primary;
     border-radius: 16px;
     padding: 18px;
     margin: 12px 0;
@@ -106,8 +106,8 @@
     top: -10px;
     left: 50%;
     transform: translateX(-50%);
-    background: $c-green;
-    color: $c-white;
+    background: $c-primary;
+    color: $c-surface;
     font-size: 10px;
     padding: 3px 14px;
     border-radius: 10px;

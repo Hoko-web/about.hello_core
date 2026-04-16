@@ -5,7 +5,7 @@
 // ============================================
 
 .empathy {
-  background: $c-cream;
+  background: $c-bg;
   padding: 56px 0;
 
   @include tablet {
@@ -21,13 +21,13 @@
     font-size: 20px;
     text-align: center;
     line-height: 2.2;
-    color: $c-dark;
+    color: $c-heading;
     margin-bottom: 36px;
     font-weight: 300;
 
     strong {
       font-weight: 600;
-      color: $c-green;
+      color: $c-primary;
     }
 
     @include tablet {
@@ -58,7 +58,7 @@
   &__item {
     font-size: 13px;
     padding: 14px 20px;
-    background: $c-white;
+    background: $c-surface;
     border-radius: 40px;
     color: #6a6a5a;
     text-align: center;
