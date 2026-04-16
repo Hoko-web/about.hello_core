@@ -2,3 +2,19 @@ node_modules/
 *.xlsx
 *.xls
 *.xlsm
+
+# macOS
+.DS_Store
+
+# エディタ設定
+.vscode/
+
+# ソースマップ（開発用）
+*.map
+
+# npm設定（開発用）
+package.json
+package-lock.json
+
+# 個人ドキュメント
+LP分析ツール導入ガイド.md
