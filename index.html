@@ -30,7 +30,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./img/hellocore_logo.png"
+      href="./img/favicon.png"
     />
     <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png" />
     <meta
@@ -50,7 +50,7 @@
     />
     <meta
       property="og:image"
-      content="https://hoko-web.github.io/hello_core_lp/img/hellocore_logo.png"
+      content="https://hoko-web.github.io/hello_core_lp/img/hellocore_logo.webp"
     />
     <meta
       property="og:url"
@@ -82,6 +82,66 @@
     <link rel="stylesheet" href="css/reset.css" />
     <!-- メインスタイル（scss/style.scss からコンパイル） -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- 構造化データ: 検索エンジンにビジネス情報を伝える -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsActivityLocation",
+        "name": "pilatesroom はろこあ",
+        "description": "愛知県新城市で女性専用ピラティス教室。初心者歓迎・少人数制レッスン。",
+        "url": "https://hoko-web.github.io/hello_core_lp/",
+        "image": "https://hoko-web.github.io/hello_core_lp/img/hellocore_logo.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "新城市",
+          "addressRegion": "愛知県",
+          "addressCountry": "JP"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 34.9,
+          "longitude": 137.5
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "priceRange": "¥2,000〜¥6,000",
+        "currenciesAccepted": "JPY",
+        "paymentAccepted": "Cash",
+        "areaServed": {
+          "@type": "City",
+          "name": "新城市"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "鈴木 一美",
+          "jobTitle": "nano認定ピラティストレーナー"
+        },
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "name": "グループレッスン（単発）",
+            "price": "3000",
+            "priceCurrency": "JPY"
+          },
+          {
+            "@type": "Offer",
+            "name": "グループレッスン（12回券）",
+            "price": "27000",
+            "priceCurrency": "JPY"
+          },
+          {
+            "@type": "Offer",
+            "name": "無料体験レッスン",
+            "price": "0",
+            "priceCurrency": "JPY"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -125,11 +185,11 @@
             target="_blank"
             rel="noopener noreferrer"
             ><img
-              src="./img/Instagram_logo.png"
+              src="./img/Instagram_logo.webp"
               alt="Instagram logo"
               class="final-cta__ig-logo"
-              width="5000"
-              height="5000"
+              width="200"
+              height="200"
           /></a>
         </div>
       </div>
@@ -138,11 +198,11 @@
       <div class="container header__inner">
         <a href="#top">
           <img
-            src="./img/hellocore_logo.png"
+            src="./img/hellocore_logo.webp"
             alt="pilatesroom はろこあ"
             class="header__logo-img"
-            width="2119"
-            height="2067"
+            width="400"
+            height="390"
           />
         </a>
         <!-- ====== PC用ナビ　====== -->
@@ -184,27 +244,27 @@
         <!-- 写真スライドショー -->
         <div class="hero__photos">
           <img
-            src="./img/hero_photo1.jpg"
+            src="./img/hero_photo1.webp"
             alt="ピラティスレッスンの様子"
             class="hero__photo is-active"
-            width="3600"
-            height="2400"
+            width="1800"
+            height="1200"
           />
           <img
-            src="./img/hero_photo2.jpg"
+            src="./img/hero_photo2.webp"
             alt="マットピラティスの風景"
             class="hero__photo"
             loading="lazy"
-            width="3600"
-            height="2400"
+            width="1800"
+            height="1200"
           />
           <img
-            src="./img/hero_photo3.jpg"
+            src="./img/hero_photo3.webp"
             alt="はろこあのスタジオ内観"
             class="hero__photo"
             loading="lazy"
-            width="3600"
-            height="2400"
+            width="1800"
+            height="1200"
           />
           <!-- グラデーションオーバーレイ -->
           <div class="hero__photo-overlay"></div>
@@ -337,12 +397,12 @@
           <h2 class="section-title">講師紹介</h2>
           <div class="trainer__content">
             <img
-              src="./img/trainer.jpg"
+              src="./img/trainer.webp"
               alt="講師 鈴木一美"
               class="trainer__photo"
               loading="lazy"
-              width="1045"
-              height="1567"
+              width="800"
+              height="1200"
             />
 
             <div class="trainer__info">
@@ -495,11 +555,11 @@
           <div class="lesson__card" data-aos="fade-up">
             <div class="lesson__card-img">
               <img
-                src="./img/lesson_gloup2.jpg"
+                src="./img/lesson_gloup2.webp"
                 alt="グループレッスン写真"
                 loading="lazy"
-                width="2400"
-                height="3600"
+                width="1200"
+                height="1800"
               />
             </div>
             <div class="lesson__card-body">
@@ -916,7 +976,7 @@
               target="_blank"
               rel="noopener noreferrer"
               ><img
-                src="./img/Instagram_logo.png"
+                src="./img/Instagram_logo.webp"
                 alt="Instagram logo"
                 class="final-cta__ig-logo"
                 loading="lazy"
